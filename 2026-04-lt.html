@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026년 4월 LT 엠베서더 뉴스레터</title>
+    <style>
+        :root { --bs-red: #D71921; --bs-dark: #1a1a1a; --bs-light: #fdfdfd; }
+        body { 
+            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; 
+            line-height: 1.8; color: #333; margin: 0; padding: 0; background-color: #f0f0f0; 
+        }
+        .container { max-width: 650px; margin: 0 auto; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.15); position: relative; }
+        
+        /* 상단 네비: 목록보기 버튼 추가 */
+        .top-nav { background-color: var(--bs-red); color: white; padding: 15px 25px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+        .logo-img { height: 32px; background: white; padding: 4px; border-radius: 4px; }
+        .btn-list { 
+            text-decoration: none; color: white; font-size: 13px; font-weight: bold; 
+            border: 1px solid white; padding: 5px 12px; border-radius: 20px; transition: 0.3s;
+        }
+        .btn-list:hover { background: white; color: var(--bs-red); }
+
+        /* 히어로 섹션 */
+        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://r.jina.ai/i/05e2637207c44e0586e9273c52e46b07'); background-size: cover; background-position: center; color: #fff; padding: 50px 40px; text-align: center; }
+        .hero h1 { margin: 0; font-size: 28px; font-weight: 900; letter-spacing: -1px; }
+
+        /* 섹션 공통 */
+        .section { padding: 40px 30px; border-bottom: 1px solid #eee; }
+        .section-title { font-size: 20px; font-weight: 800; color: var(--bs-red); margin-bottom: 20px; border-left: 5px solid var(--bs-red); padding-left: 12px; }
+        
+        .info-card { background: #f9f9f9; border-radius: 10px; padding: 20px; margin-bottom: 20px; font-size: 15px; }
+        .info-card b { color: var(--bs-red); }
+
+        /* 워런티 섹션 */
+        .warranty-box { background: var(--bs-dark); color: #fff; border-radius: 12px; padding: 30px; text-align: center; margin: 20px 0; }
+        .warranty-title { font-size: 22px; font-weight: 800; margin-bottom: 15px; }
+        .warranty-details { display: flex; justify-content: space-around; font-size: 14px; border-top: 1px solid #444; padding-top: 15px; }
+
+        /* 푸터 및 하단 목록가기 버튼 */
+        .footer { background: #f4f4f4; padding: 50px 30px; text-align: center; }
+        .btn-call { 
+            display: block; background: var(--bs-red); color: #fff; text-decoration: none; 
+            padding: 15px; border-radius: 8px; font-weight: bold; font-size: 17px; margin-bottom: 15px;
+        }
+        .btn-go-index { 
+            display: inline-block; color: #666; text-decoration: underline; font-size: 14px; margin-top: 10px; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="top-nav">
+        <img src="logo.png" alt="Bridgestone" class="logo-img">
+        <a href="index.html" class="btn-list">◀ 목록보기</a>
+    </div>
+
+    <div class="hero">
+        <h1>2026. 04<br>월간 LT 엠베서더 뉴스레터</h1>
+    </div>
+
+    <div class="section">
+        <div class="section-title">엠베서더 여러분, 반갑습니다!</div>
+        <p>PS팀 정기현입니다. 한국 물류의 핵심인 라이트 트럭(LT) 시장의 판도를 바꿀 <b>신제품 RS002/RD002</b> 런칭 소식과 특별한 혜택을 전해드립니다.</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">압도적인 성능 향상</div>
+        <div class="info-card">
+            <b>RS002 (조향축):</b> 기존 R156 대비 훨씬 더 길어진 예상 수명과 트레드 폭 확대로 주행 안정성을 강화했습니다.
+        </div>
+        <div class="info-card">
+            <b>RD002 (구동축):</b> 스테디셀러 M729를 넘어서는 향상된 수명 패턴을 적용하여 유저의 수익성을 극대화했습니다.
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="warranty-box">
+            <div class="warranty-title">6개월 '운행 안심 보장'</div>
+            <div class="warranty-details">
+                <div><b>6개월</b><br>무상교환</div>
+                <div><b>30%</b><br>마모보장</div>
+                <div><b>1:1</b><br>새제품교환</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="tel:01063892603" class="btn-call">📞 클레임 및 기술지원 연락하기</a>
+        <a href="index.html" class="btn-go-index">전체 뉴스레터 목록 보기</a>
+        <p style="margin-top:40px; font-size:11px; color:#bbb;">© 2026 Bridgestone Tire Sales Korea. PS Team</p>
+    </div>
+</div>
+
+</body>
+</html>
