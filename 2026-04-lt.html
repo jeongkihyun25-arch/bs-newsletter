@@ -3,49 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026년 4월 LT 엠베서더 뉴스레터</title>
+    <title>2026년 4월 월간 LT 엠베서더 뉴스레터</title>
     <style>
-        :root { --bs-red: #D71921; --bs-dark: #1a1a1a; --bs-light: #fdfdfd; }
+        :root { --bs-red: #D71921; --bs-dark: #1a1a1a; --bs-gray: #f4f4f4; }
+        
+        /* 글씨체 설정: 맑은 고딕 최우선 */
         body { 
             font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; 
             line-height: 1.8; color: #333; margin: 0; padding: 0; background-color: #f0f0f0; 
         }
-        .container { max-width: 650px; margin: 0 auto; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.15); position: relative; }
+        .container { max-width: 650px; margin: 0 auto; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         
-        /* 상단 네비: 목록보기 버튼 추가 */
-        .top-nav { background-color: var(--bs-red); color: white; padding: 15px 25px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+        /* 상단 네비 바 */
+        .top-nav { background-color: var(--bs-red); color: white; padding: 15px 25px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 1000; }
         .logo-img { height: 32px; background: white; padding: 4px; border-radius: 4px; }
-        .btn-list { 
-            text-decoration: none; color: white; font-size: 13px; font-weight: bold; 
-            border: 1px solid white; padding: 5px 12px; border-radius: 20px; transition: 0.3s;
-        }
-        .btn-list:hover { background: white; color: var(--bs-red); }
+        .btn-back { text-decoration: none; color: white; font-size: 13px; font-weight: bold; border: 1px solid white; padding: 6px 15px; border-radius: 20px; transition: 0.3s; }
+        .btn-back:hover { background: white; color: var(--bs-red); }
 
         /* 히어로 섹션 */
-        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://r.jina.ai/i/05e2637207c44e0586e9273c52e46b07'); background-size: cover; background-position: center; color: #fff; padding: 50px 40px; text-align: center; }
-        .hero h1 { margin: 0; font-size: 28px; font-weight: 900; letter-spacing: -1px; }
+        .hero { background: #1a1a1a; color: #fff; padding: 60px 40px; text-align: center; }
+        .hero h1 { margin: 0; font-size: 30px; font-weight: 900; letter-spacing: -1.5px; }
+        .hero p { margin: 15px 0 0; font-size: 18px; color: var(--bs-red); font-weight: bold; }
 
-        /* 섹션 공통 */
-        .section { padding: 40px 30px; border-bottom: 1px solid #eee; }
-        .section-title { font-size: 20px; font-weight: 800; color: var(--bs-red); margin-bottom: 20px; border-left: 5px solid var(--bs-red); padding-left: 12px; }
+        /* 인사말 */
+        .section-intro { padding: 45px 35px; border-bottom: 1px solid #eee; background: #fdfdfd; }
+        .section-intro h2 { font-size: 22px; margin-bottom: 15px; color: var(--bs-dark); }
+        .section-intro p { font-size: 16px; color: #555; word-break: keep-all; }
+
+        /* 공통 섹션 스타일 */
+        .section { padding: 45px 35px; border-bottom: 1px solid #f0f0f0; }
+        .section-title { font-size: 20px; font-weight: 800; color: var(--bs-red); margin-bottom: 25px; display: flex; align-items: center; gap: 10px; }
+        .section-title::after { content: ''; flex: 1; height: 1px; background: #eee; }
+
+        /* 카드형 레이아웃 */
+        .info-card { background: #f9f9f9; border-radius: 12px; padding: 25px; margin-bottom: 25px; border: 1px solid #efefef; }
+        .info-card h3 { margin: 0 0 15px 0; font-size: 18px; color: var(--bs-dark); }
+        .info-card p { margin: 0; font-size: 15px; color: #666; }
+
+        /* 제품 정보 강조 */
+        .product-box { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 15px; }
+        .product-item { background: #fff; padding: 20px; border-radius: 8px; border-left: 4px solid var(--bs-red); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .product-item b { font-size: 17px; color: #000; display: block; margin-bottom: 5px; }
+
+        /* 워런티 박스 (강조) */
+        .warranty-box { background: var(--bs-dark); color: #fff; border-radius: 15px; padding: 35px; text-align: center; }
+        .warranty-title { font-size: 24px; font-weight: 800; color: var(--bs-red); margin-bottom: 20px; }
+        .warranty-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; border-top: 1px solid #444; padding-top: 20px; }
+        .warranty-item b { font-size: 18px; display: block; margin-bottom: 5px; }
+        .warranty-item span { font-size: 12px; color: #aaa; }
+
+        /* 마케팅 리스트 */
+        .mkt-list { list-style: none; padding: 0; margin: 0; }
+        .mkt-list li { margin-bottom: 20px; padding-left: 30px; position: relative; }
+        .mkt-list li::before { content: '•'; position: absolute; left: 10px; color: var(--bs-red); font-size: 20px; font-weight: bold; }
+        .mkt-list li b { font-size: 16px; display: block; margin-bottom: 5px; color: #222; }
+
+        /* 하단 슬로건 & 푸터 */
+        .slogan-section { padding: 50px 35px; text-align: center; background: #fff8f8; }
+        .slogan-text { font-size: 20px; font-weight: 800; color: var(--bs-dark); letter-spacing: -1px; word-break: keep-all; }
         
-        .info-card { background: #f9f9f9; border-radius: 10px; padding: 20px; margin-bottom: 20px; font-size: 15px; }
-        .info-card b { color: var(--bs-red); }
-
-        /* 워런티 섹션 */
-        .warranty-box { background: var(--bs-dark); color: #fff; border-radius: 12px; padding: 30px; text-align: center; margin: 20px 0; }
-        .warranty-title { font-size: 22px; font-weight: 800; margin-bottom: 15px; }
-        .warranty-details { display: flex; justify-content: space-around; font-size: 14px; border-top: 1px solid #444; padding-top: 15px; }
-
-        /* 푸터 및 하단 목록가기 버튼 */
-        .footer { background: #f4f4f4; padding: 50px 30px; text-align: center; }
-        .btn-call { 
-            display: block; background: var(--bs-red); color: #fff; text-decoration: none; 
-            padding: 15px; border-radius: 8px; font-weight: bold; font-size: 17px; margin-bottom: 15px;
-        }
-        .btn-go-index { 
-            display: inline-block; color: #666; text-decoration: underline; font-size: 14px; margin-top: 10px; 
-        }
+        .footer { background: #f4f4f4; padding: 50px 35px; text-align: center; }
+        .btn-call { display: block; background: var(--bs-red); color: #fff; text-decoration: none; padding: 18px; border-radius: 8px; font-weight: bold; font-size: 18px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(215,25,33,0.3); }
+        .btn-index { display: inline-block; color: #888; text-decoration: underline; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -53,42 +72,90 @@
 <div class="container">
     <div class="top-nav">
         <img src="logo.png" alt="Bridgestone" class="logo-img">
-        <a href="index.html" class="btn-list">◀ 목록보기</a>
+        <a href="index.html" class="btn-back">◀ 목록보기</a>
     </div>
 
     <div class="hero">
-        <h1>2026. 04<br>월간 LT 엠베서더 뉴스레터</h1>
+        <h1>2026년 4월 월간 뉴스레터</h1>
+        <p>LSR NEW GENERATION: RS002 & RD002</p>
+    </div>
+
+    <div class="section-intro">
+        <h2>LT 엠베서더 여러분, 안녕하십니까!</h2>
+        <p>
+            PS팀 정기현입니다. 한국 물류의 핵심인 현대 마이티 등 라이트 트럭(LT) 시장의 판도를 바꿀 <b>신제품 RS002/RD002</b> 런칭 소식을 전해드립니다.
+        </p>
     </div>
 
     <div class="section">
-        <div class="section-title">엠베서더 여러분, 반갑습니다!</div>
-        <p>PS팀 정기현입니다. 한국 물류의 핵심인 라이트 트럭(LT) 시장의 판도를 바꿀 <b>신제품 RS002/RD002</b> 런칭 소식과 특별한 혜택을 전해드립니다.</p>
-    </div>
-
-    <div class="section">
-        <div class="section-title">압도적인 성능 향상</div>
+        <div class="section-title">📍 전국 런칭 세미나 개최</div>
         <div class="info-card">
-            <b>RS002 (조향축):</b> 기존 R156 대비 훨씬 더 길어진 예상 수명과 트레드 폭 확대로 주행 안정성을 강화했습니다.
+            <p>경기, 부산, 전라 등 전국 거점을 중심으로 릴레이 세미나를 진행합니다. 신제품의 성능을 직접 확인하실 수 있는 교육과 함께 참석하시는 엠베서더 분들께는 <b>프리미엄 기프트 패키지</b>를 증정합니다.</p>
         </div>
-        <div class="info-card">
-            <b>RD002 (구동축):</b> 스테디셀러 M729를 넘어서는 향상된 수명 패턴을 적용하여 유저의 수익성을 극대화했습니다.
+    </div>
+
+    <div class="section">
+        <div class="section-title">💎 기존 대비 압도적인 성능 향상</div>
+        <p style="font-size: 15px; color: #777; margin-bottom: 20px;">현장의 피드백을 수렴하여 기존 제품군 대비 비약적인 발전을 이루어냈습니다.</p>
+        
+        <div class="product-box">
+            <div class="product-item">
+                <b>RS002 (조향축)</b>
+                기존 R156 대비 훨씬 더 길어진 예상 수명을 자랑합니다. 특히 트레드 폭(TW)을 넓혀 주행 안정성을 강화하였으며, 불규칙 마모 저항성 테스트에서 동급 최상위 수준을 기록했습니다.
+            </div>
+            <div class="product-item">
+                <b>RD002 (구동축)</b>
+                스테디셀러인 M729 대비 더욱 향상된 수명 패턴을 적용하여 장거리 운행 유저들의 수익성을 극대화했습니다.
+            </div>
         </div>
     </div>
 
     <div class="section">
         <div class="warranty-box">
-            <div class="warranty-title">6개월 '운행 안심 보장'</div>
-            <div class="warranty-details">
-                <div><b>6개월</b><br>무상교환</div>
-                <div><b>30%</b><br>마모보장</div>
-                <div><b>1:1</b><br>새제품교환</div>
+            <div class="warranty-title">🛡️ 6개월 '운행 안심 보장'</div>
+            <p style="font-size: 14px; margin-bottom: 25px; opacity: 0.8;">엠베서더 분들의 판매 자신감을 위해 품질 보증 기준을 파격적으로 확대했습니다.</p>
+            <div class="warranty-grid">
+                <div class="warranty-item">
+                    <b>6개월</b>
+                    <span>구입일 무상교환<br>(기존 대비 2배)</span>
+                </div>
+                <div class="warranty-item">
+                    <b>30%</b>
+                    <span>마모 기준<br>확대 적용</span>
+                </div>
+                <div class="warranty-item">
+                    <b>1:1</b>
+                    <span>1본 한해<br>새 제품 교환</span>
+                </div>
             </div>
         </div>
     </div>
 
+    <div class="section">
+        <div class="section-title">🌐 온/오프라인 통합 마케팅 지원</div>
+        <ul class="mkt-list">
+            <li>
+                <b>LSR 체험단 운영</b>
+                실제 마이티 유저들을 대상으로 제품 체험단을 모집하여, 현장의 생생한 만족도 데이터를 확보하고 공유할 예정입니다.
+            </li>
+            <li>
+                <b>월간 디지털 뉴스레터</b>
+                매달 카카오톡과 SNS를 통해 유저 인터뷰, 최신 마켓 정보, SNS 전용 컨텐츠를 정기적으로 배포하여 엠베서더 여러분의 영업을 지원합니다.
+            </li>
+            <li>
+                <b>현장 세일즈 툴킷 지원</b>
+                대형 현수막, 포스터, 테스트 데이터 보고서 등 강력한 오프라인 홍보물을 각 대리점에 지원합니다.
+            </li>
+        </ul>
+    </div>
+
+    <div class="slogan-section">
+        <p class="slogan-text">"현장에서 답을 찾는 솔루션 파트너,<br>브리지스톤이 함께합니다."</p>
+    </div>
+
     <div class="footer">
         <a href="tel:01063892603" class="btn-call">📞 클레임 및 기술지원 연락하기</a>
-        <a href="index.html" class="btn-go-index">전체 뉴스레터 목록 보기</a>
+        <a href="index.html" class="btn-index">전체 뉴스레터 목록 보기</a>
         <p style="margin-top:40px; font-size:11px; color:#bbb;">© 2026 Bridgestone Tire Sales Korea. PS Team</p>
     </div>
 </div>
