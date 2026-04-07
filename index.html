@@ -3,48 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monthly Newsletter for LT Ambassadors</title>
+    <title>월간 LT 앰배서더 뉴스레터 저장소</title>
     <style>
-        body { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f8f9fa; }
-        .header { background-color: #d71921; color: white; padding: 60px 20px; text-align: center; }
-        .header h1 { margin: 0; font-size: 22px; letter-spacing: -0.5px; line-height: 1.3; font-weight: 800; }
-        .header p { margin-top: 15px; opacity: 0.9; font-size: 15px; font-weight: 400; }
-        .container { max-width: 500px; margin: -30px auto 50px; padding: 0 20px; }
-        .archive-card { background: white; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); padding: 35px 25px; }
-        .section-title { font-weight: bold; font-size: 18px; margin-bottom: 25px; color: #222; display: flex; align-items: center; }
-        .section-title::before { content: ''; display: inline-block; width: 4px; height: 18px; background: #d71921; margin-right: 10px; border-radius: 2px; }
+        :root { --bs-red: #D71921; --bg-gray: #F8F9FA; }
+        body { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: white; }
         
-        /* 알림 메시지 스타일 (목록이 빌 때) */
-        .empty-status { text-align: center; padding: 40px 0; color: #999; font-size: 14px; border: 1px dashed #eee; border-radius: 15px; }
+        /* 상단 헤더: 요청하신 명칭 반영 */
+        .top-nav { background-color: var(--bs-red); color: white; padding: 15px 5%; display: flex; align-items: center; gap: 15px; }
+        .logo-circle { width: 40px; height: 40px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--bs-red); font-size: 20px; }
+        .nav-text h2 { margin: 0; font-size: 16px; font-weight: 800; }
+        .nav-text p { margin: 0; font-size: 12px; opacity: 0.9; }
+
+        .main-container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
         
-        /* 뉴스레터 목록 스타일 (추가 시 사용) */
-        .issue-link { display: none; justify-content: space-between; align-items: center; padding: 20px; background: #fff; border: 1px solid #eee; border-radius: 15px; text-decoration: none; color: #333; margin-bottom: 15px; transition: all 0.2s ease; }
-        .issue-link:active { background: #f8f9fa; transform: scale(0.97); border-color: #d71921; }
-        .issue-info { display: flex; flex-direction: column; }
-        .issue-date { font-size: 13px; color: #d71921; font-weight: bold; margin-bottom: 5px; }
-        .issue-title { font-weight: bold; font-size: 16px; color: #333; }
-        .arrow { color: #ccc; font-size: 18px; }
-        
-        .footer { text-align: center; font-size: 12px; color: #aaa; margin-top: 40px; padding-bottom: 20px; }
+        /* 타이틀 섹션 */
+        .sub-title { color: var(--bs-red); font-size: 13px; font-weight: bold; margin-bottom: 5px; }
+        .main-title { font-size: 28px; font-weight: 800; margin: 0 0 15px 0; letter-spacing: -1px; }
+        .description { color: #666; font-size: 15px; margin-bottom: 30px; }
+
+        /* 하이라이트 박스 */
+        .info-box { border-left: 4px solid var(--bs-red); background-color: #fff; border-top: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee; padding: 20px 25px; border-radius: 4px; margin-bottom: 50px; font-size: 14px; color: #555; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+
+        /* 연도 구분선 */
+        .year-section { border-bottom: 2px solid var(--bs-red); display: flex; align-items: center; gap: 10px; margin-bottom: 30px; padding-bottom: 5px; }
+        .year-text { font-size: 18px; font-weight: 800; color: var(--bs-red); }
+        .year-unit { font-size: 16px; font-weight: bold; }
+
+        /* 빈 목록 상태 메시지 */
+        .empty-grid { text-align: center; padding: 60px 0; background: #f9f9f9; border-radius: 12px; border: 1px dashed #ddd; color: #999; font-size: 15px; }
+
+        .footer { text-align: center; font-size: 12px; color: #aaa; margin-top: 60px; padding-bottom: 30px; }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Monthly Newsletter<br>for LT Ambassadors</h1>
-        <p>브리지스톤 LT 앰배서더 뉴스레터</p>
+
+    <div class="top-nav">
+        <div class="logo-circle">B</div>
+        <div class="nav-text">
+            <h2>브리지스톤 타이어 세일즈 코리아</h2>
+            <p>뉴스레터</p>
+        </div>
     </div>
 
-    <div class="container">
-        <div class="archive-card">
-            <div class="section-title">발행 목록</div>
-            
-            <div class="empty-status">
-                첫 번째 뉴스레터 발행을 준비 중입니다.
-            </div>
+    <div class="main-container">
+        <p class="sub-title">뉴스레터 아카이브</p>
+        <h1 class="main-title">월간 LT 앰배서더 뉴스레터 저장소</h1>
+        <p class="description">브리지스톤 타이어 공식 월간 LT 앰배서더 뉴스레터 전체 목록입니다. 각 호를 클릭하여 내용을 확인하세요.</p>
 
-            )을 제거하고 사용하세요 -->
-            </div>
-        <div class="footer">© 2026 Bridgestone Tire Sales Korea. PS Team</div>
+        <div class="info-box">
+            매월 새 호가 발행되면 아래 목록에 자동으로 추가됩니다. LT 엠베서더에게 최신 소식을 전달해 드립니다.
+        </div>
+
+        <div class="year-section">
+            <span class="year-text">2026</span> <span class="year-unit">년</span>
+        </div>
+
+        <div class="empty-grid">
+            첫 번째 뉴스레터 발행을 준비 중입니다. 잠시만 기다려 주세요!
+        </div>
     </div>
+
+    <div class="footer">© 2026 Bridgestone Tire Sales Korea. PS Team</div>
+
 </body>
 </html>
