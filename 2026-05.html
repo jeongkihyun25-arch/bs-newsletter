@@ -13,52 +13,50 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { 'bs-red': '#D71921', 'bs-dark': '#1a1a1a' },
-                    animation: { 'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite' }
+                    colors: { 'bs-red': '#D71921', 'bs-dark': '#1a1a1a' }
                 }
             }
         }
     </script>
     <style>
-        body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; }
-        .hero-gradient { background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); }
-        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; background-color: #f4f4f4; }
+        .hero-bg { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=1000'); background-size: cover; background-position: center; }
     </style>
 </head>
-<body class="bg-gray-50 text-slate-800">
+<body class="text-slate-800">
 
-<div class="max-w-2xl mx-auto shadow-2xl min-h-screen bg-white">
+<div class="max-w-xl mx-auto shadow-2xl min-h-screen bg-white">
     
-    <nav class="sticky top-0 bg-white/90 backdrop-blur-md border-b border-gray-100 z-50 px-6 py-4 flex justify-between items-center">
-        <img src="https://jeongkihyun25-arch.github.io/bs-newsletter/logo.png" alt="Bridgestone" class="h-6">
-        <span class="text-[10px] font-bold text-slate-400 tracking-tighter">MONTHLY LT AMBASSADOR</span>
+    <nav class="bg-white px-6 py-4 border-b border-gray-100 flex justify-between items-center sticky top-0 z-50">
+        <img src="https://jeongkihyun25-arch.github.io/bs-newsletter/logo.png" alt="Bridgestone" class="h-5">
+        <span class="text-[10px] font-black text-slate-400 tracking-widest uppercase">Monthly LT Ambassador</span>
     </nav>
 
-    <header class="hero-gradient text-white pt-20 pb-16 px-8 text-center relative overflow-hidden">
-        <div class="relative z-10" data-aos="zoom-out">
-            <div class="inline-flex items-center gap-2 bg-bs-red px-3 py-1 rounded text-[10px] font-black mb-6 animate-bounce">NEW ARRIVAL</div>
-            <h1 class="text-4xl font-black tracking-tighter leading-tight mb-4">
+    <header class="hero-bg text-white py-20 px-8 text-center relative">
+        <div data-aos="fade-down">
+            <span class="inline-block px-3 py-1 bg-bs-red text-[10px] font-black rounded mb-4">NEW ARRIVAL</span>
+            <h1 class="text-3xl font-black tracking-tighter leading-tight mb-4">
                 타협 없는 수명, 압도적 내구<br>
-                <span class="text-bs-red">RS002 & RD002</span>
+                <span class="text-white">RS002 & RD002</span>
             </h1>
-            <p class="text-slate-400 text-sm font-medium">브리지스톤이 보증하는 확실한 품질, 더욱 안심되는 주행 [cite: 3, 27]</p>
+            <p class="text-slate-300 text-xs font-medium">브리지스톤이 보증하는 확실한 품질, 더욱 안심되는 주행</p>
         </div>
     </header>
 
-    <section class="relative -mt-8 px-6" data-aos="fade-up">
-        <div class="bg-bs-red text-white p-8 rounded-3xl shadow-2xl text-center">
-            <i data-lucide="shield-check" class="w-12 h-12 mx-auto mb-4 opacity-80"></i>
-            <h2 class="text-2xl font-black mb-2">구입일로부터 6개월 무상교환 [cite: 2, 26]</h2>
-            <p class="text-sm opacity-90 mb-6">브리지스톤이 품질을 보증합니다 [cite: 4, 27]</p>
+    <section class="px-6 -mt-10" data-aos="fade-up">
+        <div class="bg-bs-red text-white p-8 rounded-2xl shadow-xl text-center">
+            <i data-lucide="shield-check" class="w-10 h-10 mx-auto mb-3 opacity-90"></i>
+            <h2 class="text-2xl font-black mb-1">구입일로부터 6개월 무상교환</h2>
+            <p class="text-xs opacity-80 mb-8">브리지스톤이 품질을 보증합니다</p>
             
-            <div class="grid grid-cols-2 gap-3">
-                <div class="bg-white/10 p-4 rounded-xl border border-white/20">
-                    <p class="text-[10px] uppercase opacity-60 mb-1">대상 제품</p>
-                    <p class="font-bold text-xs">RS002 / RD002 LSR<br>전 사이즈 [cite: 10, 40]</p>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-black/10 p-4 rounded-xl text-left">
+                    <p class="text-[9px] font-bold opacity-60 mb-1 uppercase tracking-tighter">대상 제품</p>
+                    <p class="font-black text-xs">RS002 / RD002 LSR<br>전 사이즈</p>
                 </div>
-                <div class="bg-white/10 p-4 rounded-xl border border-white/20">
-                    <p class="text-[10px] uppercase opacity-60 mb-1">보증 조건</p>
-                    <p class="font-bold text-xs">구입 후 6개월 혹은<br>마모 30% 이내 [cite: 11, 40]</p>
+                <div class="bg-black/10 p-4 rounded-xl text-left">
+                    <p class="text-[9px] font-bold opacity-60 mb-1 uppercase tracking-tighter">보증 조건</p>
+                    <p class="font-black text-xs">구입 후 6개월 혹은<br>마모 30% 이내</p>
                 </div>
             </div>
         </div>
@@ -66,78 +64,98 @@
 
     <section class="p-8 space-y-12">
         <div data-aos="fade-right">
-            <div class="flex items-center gap-3 mb-6">
-                <span class="text-3xl font-black text-bs-dark tracking-tighter">R-Steer 002</span>
-                <span class="h-[2px] flex-1 bg-slate-100"></span>
+            <div class="flex items-center gap-3 mb-4">
+                <span class="text-2xl font-black text-bs-dark">R-Steer 002</span>
+                <span class="h-[1px] flex-1 bg-slate-100"></span>
             </div>
-            <p class="text-bs-red font-black text-lg mb-4">"압도적 내구, 끝까지 간다" [cite: 31]</p>
-            <ul class="space-y-4 text-slate-600">
-                <li class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl">
-                    <i data-lucide="crosshair" class="w-5 h-5 text-bs-red mt-1"></i>
-                    <div><b>조항 안정성 강화 [cite: 7, 32]</b><p class="text-xs text-slate-400 mt-1">정확한 조형과 타협 없는 타이어 수명을 제공합니다[cite: 6].</p></div>
-                </li>
-                <li class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl">
-                    <i data-lucide="layers" class="w-5 h-5 text-bs-red mt-1"></i>
-                    <div><b>균일한 마모 성능 [cite: 8, 33]</b><p class="text-xs text-slate-400 mt-1">장시간 주행에도 균일한 마모를 유지합니다[cite: 8, 33].</p></div>
-                </li>
-            </ul>
+            <p class="text-bs-red font-black text-lg mb-6 leading-tight">"압도적 내구, 끝까지 간다"</p>
+            
+            <div class="space-y-4">
+                <div class="flex gap-4 p-5 bg-slate-50 rounded-xl border-l-4 border-bs-red">
+                    <i data-lucide="crosshair" class="w-5 h-5 text-bs-red shrink-0 mt-1"></i>
+                    <div>
+                        <b class="text-sm block mb-1 font-bold">조항 안정성 강화</b>
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium">정확한 조형과 타협 없는 타이어 수명을 제공합니다.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-5 bg-slate-50 rounded-xl border-l-4 border-bs-red">
+                    <i data-lucide="layers" class="w-5 h-5 text-bs-red shrink-0 mt-1"></i>
+                    <div>
+                        <b class="text-sm block mb-1 font-bold">균일한 마모 성능</b>
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium">장시간 주행에도 균일한 마모를 유지합니다.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div data-aos="fade-left">
-            <div class="flex items-center gap-3 mb-6">
-                <span class="h-[2px] flex-1 bg-slate-100"></span>
-                <span class="text-3xl font-black text-bs-dark tracking-tighter text-right">R-Drive 002</span>
+            <div class="flex items-center gap-3 mb-4">
+                <span class="h-[1px] flex-1 bg-slate-100"></span>
+                <span class="text-2xl font-black text-bs-dark">R-Drive 002</span>
             </div>
-            <p class="text-bs-red font-black text-lg mb-4 text-right">"강하게 밀고, 부드럽게 간다" [cite: 36]</p>
-            <ul class="space-y-4 text-slate-600">
-                <li class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl">
-                    <i data-lucide="heavy-duty" class="w-5 h-5 text-bs-red mt-1"></i>
-                    <div><b>고하중 대응 성능 [cite: 15, 37]</b><p class="text-xs text-slate-400 mt-1">상용차에 최적화된 내구 설계로 강한 추진력을 제공합니다[cite: 9, 14].</p></div>
-                </li>
-                <li class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl">
-                    <i data-lucide="map" class="w-5 h-5 text-bs-red mt-1"></i>
-                    <div><b>장거리 운행 최적화 [cite: 17, 39]</b><p class="text-xs text-slate-400 mt-1">안정적인 접지력으로 부드러운 주행 환경을 선사합니다[cite: 16, 38].</p></div>
-                </li>
-            </ul>
+            <p class="text-bs-red font-black text-lg mb-6 leading-tight text-right">"강하게 밀고, 부드럽게 간다"</p>
+            
+            <div class="space-y-4 text-right">
+                <div class="flex flex-row-reverse gap-4 p-5 bg-slate-50 rounded-xl border-r-4 border-bs-red">
+                    <i data-lucide="zap" class="w-5 h-5 text-bs-red shrink-0 mt-1"></i>
+                    <div>
+                        <b class="text-sm block mb-1 font-bold">고하중 대응 성능</b>
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium">상용차에 최적화된 내구 설계로 강한 추진력을 제공합니다.</p>
+                    </div>
+                </div>
+                <div class="flex flex-row-reverse gap-4 p-5 bg-slate-50 rounded-xl border-r-4 border-bs-red">
+                    <i data-lucide="map" class="w-5 h-5 text-bs-red shrink-0 mt-1"></i>
+                    <div>
+                        <b class="text-sm block mb-1 font-bold">장거리 운행 최적화</b>
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium">안정적인 접지력으로 부드러운 주행 환경을 선사합니다.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="p-8 bg-slate-900 text-white rounded-t-[3rem]" data-aos="fade-up">
-        <h3 class="text-xl font-black mb-8 flex items-center gap-2">
-            <i data-lucide="help-circle" class="text-bs-red"></i> 보증 신청 및 범위 안내
+    <section class="bg-bs-dark text-white p-8 py-12 rounded-t-[2.5rem]" data-aos="fade-up">
+        <h3 class="text-xl font-black mb-10 flex items-center gap-2">
+            <i data-lucide="info" class="text-bs-red"></i> 보증 신청 및 범위 안내
         </h3>
         
-        <div class="space-y-6 text-sm">
-            <div class="border-l-2 border-bs-red pl-4">
-                <h4 class="font-bold text-bs-red mb-2 underline decoration-bs-red/30 underline-offset-4">신청 방법 [cite: 18, 42]</h4>
-                <p class="text-slate-400 leading-relaxed">해당 제품 구매 영수증 지참 후 구매처에 보증을 신청하세요[cite: 18, 42]. 브리지스톤에서 확인 후 조건 부합 시 새 타이어로 교환해 드립니다[cite: 19, 43].</p>
+        <div class="space-y-8">
+            <div class="relative pl-6 border-l border-bs-red/30">
+                <span class="absolute left-0 top-0 w-1.5 h-1.5 bg-bs-red rounded-full -translate-x-[4px]"></span>
+                <h4 class="font-black text-sm mb-2 uppercase tracking-tighter">신청 방법</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    해당 제품 구매 영수증 지참 후 구매처에 보증을 신청하세요. 브리지스톤에서 확인 후 조건 부합 시 새 타이어로 교환해 드립니다.
+                </p>
             </div>
             
-            <div class="border-l-2 border-bs-red pl-4">
-                <h4 class="font-bold text-bs-red mb-2 underline decoration-bs-red/30 underline-offset-4">보증 범위 [cite: 20, 44]</h4>
-                <p class="text-slate-400 leading-relaxed">운행 중 트레드, 사이드월, 비드 부위가 사용자 과실로 파손되어 수리가 불가능한 경우에도 1본에 한해 1회 새 제품으로 교환됩니다[cite: 12, 20, 41, 44].</p>
+            <div class="relative pl-6 border-l border-bs-red/30">
+                <span class="absolute left-0 top-0 w-1.5 h-1.5 bg-bs-red rounded-full -translate-x-[4px]"></span>
+                <h4 class="font-black text-sm mb-2 uppercase tracking-tighter">보증 범위</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    운행 중 트레드, 사이드월, 비드 부위가 사용자 과실로 파손되어 수리가 불가능한 경우에도 1본에 한해 1회 새 제품으로 교환됩니다.
+                </p>
             </div>
         </div>
 
-        <div class="mt-12 text-center">
-            <a href="tel:0232102480" class="inline-flex items-center gap-3 bg-white text-bs-dark px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:bg-bs-red hover:text-white transition-all active:scale-95 mb-8">
-                <i data-lucide="phone-call"></i> 제품 및 기술 상담 
-            </a>
-            <div class="text-[9px] text-slate-500 uppercase tracking-widest leading-loose">
-                브리지스톤 타이어 세일즈 코리아(주) [cite: 21, 45]<br>
-                서울특별시 강남구 논현로 508 GS타워 12층 <br>
-                www.bridgestone-korea.co.kr 
+        <div class="mt-16 text-center border-t border-white/5 pt-12 pb-4">
+            <p class="text-[10px] font-bold text-bs-red tracking-widest uppercase mb-4">Product & Tech Support</p>
+            <h4 class="text-lg font-black mb-2 leading-none">브리지스톤 타이어 세일즈 코리아(주)</h4>
+            <p class="text-[11px] text-slate-500 mb-8 font-medium">서울특별시 강남구 논현로 508 GS타워 12층</p>
+            
+            <div class="flex flex-col gap-3 items-center">
+                <a href="tel:0232102480" class="text-white/80 hover:text-white transition-colors text-xs font-bold underline underline-offset-4 decoration-bs-red">Tel. 02-3210-2480</a>
+                <a href="https://www.bridgestone-korea.co.kr" target="_blank" class="text-slate-500 hover:text-white transition-colors text-[10px] font-medium tracking-tight">www.bridgestone-korea.co.kr</a>
             </div>
         </div>
     </section>
 
-    <footer class="p-10 text-center bg-white">
-        <p class="text-xs font-bold text-slate-300 tracking-[0.3em]">SOLUTIONS FOR YOUR JOURNEY [cite: 24, 48]</p>
+    <footer class="p-10 text-center bg-white border-t border-slate-50">
+        <p class="text-[9px] font-black text-slate-300 tracking-[0.4em] uppercase">Solutions for your journey</p>
     </footer>
 </div>
 
 <script>
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({ duration: 800, once: true });
     lucide.createIcons();
 </script>
 
