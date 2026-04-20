@@ -4,133 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2026년 5월 월간 LT 엠베서더 뉴스레터</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        'bs-red': '#D71921',
-                        'bs-dark': '#1a1a1a',
-                        'may-green': '#2D5A27',
-                    }
+                    colors: { 'bs-red': '#D71921', 'bs-dark': '#1a1a1a' },
+                    animation: { 'bounce-slow': 'bounce 3s infinite' }
                 }
             }
         }
     </script>
     <style>
-        body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); }
+        body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; overflow-x: hidden; }
+        .bg-pattern { background-color: #f8f9fa; background-image: radial-gradient(#dee2e6 0.5px, transparent 0.5px); background-size: 20px 20px; }
+        .tire-gradient { background: linear-gradient(180deg, #ffffff 0%, #f1f1f1 100%); }
     </style>
 </head>
-<body class="bg-gray-100 text-slate-800">
+<body class="bg-pattern text-slate-800">
 
-<div class="max-w-2xl mx-auto bg-white shadow-2xl min-h-screen">
+<div class="max-w-2xl mx-auto bg-white shadow-2xl min-h-screen relative">
     
-    <nav class="sticky top-0 bg-white/90 backdrop-blur-md border-b border-gray-100 z-50 px-6 py-4 flex justify-between items-center">
-        <img src="logo.png" alt="Bridgestone" class="h-7">
-        <a href="index.html" class="text-sm font-bold text-slate-500 hover:text-bs-red flex items-center gap-1">
-            <i data-lucide="list" class="w-4 h-4"></i> 목록으로
+    <nav class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-gray-100 z-50 px-6 py-4 flex justify-between items-center">
+        <img src="https://jeongkihyun25-arch.github.io/bs-newsletter/logo.png" alt="Bridgestone" class="h-7">
+        <a href="index.html" class="text-sm font-bold text-slate-500 hover:text-bs-red flex items-center gap-1 transition-all hover:-translate-x-1">
+            <i data-lucide="chevron-left" class="w-4 h-4"></i> 리스트로 돌아가기
         </a>
     </nav>
 
-    <header class="gradient-bg text-white py-20 px-10 text-center relative overflow-hidden">
-        <div class="absolute top-0 right-0 p-4 opacity-20">
-            <i data-lucide="sun" class="w-32 h-32 text-yellow-400"></i>
+    <header class="relative bg-bs-dark text-white pt-24 pb-20 px-10 text-center overflow-hidden">
+        <div class="absolute inset-0 opacity-10 flex justify-center items-center">
+            <i data-lucide="truck" class="w-96 h-96"></i>
         </div>
-        <div class="relative z-10">
-            <p class="text-may-green font-black tracking-widest uppercase mb-2">May 2026 Edition</p>
-            <h1 class="text-4xl font-black tracking-tighter leading-tight">푸른 5월, 엠베서더를 위한<br>특별한 트럭킹 리포트</h1>
+        <div class="relative z-10" data-aos="fade-up">
+            <span class="inline-block px-4 py-1 bg-bs-red text-xs font-black rounded-full mb-4 animate-pulse">2026 MAY SPECIAL</span>
+            <h1 class="text-5xl font-black tracking-tighter leading-tight mb-4">가정의 달, 도로 위의<br>영웅들을 위하여</h1>
+            <p class="text-slate-400 text-lg font-medium italic">"안전은 타이어에서 시작되고, 행복은 집에서 완성됩니다."</p>
         </div>
     </header>
 
-    <section class="p-8">
-        <div class="flex items-center gap-2 mb-6 text-bs-red">
-            <i data-lucide="newspaper" class="w-6 h-6"></i>
-            <h2 class="text-xl font-black italic">TOP NEWS: 미래를 달리는 타이어</h2>
+    <section class="tire-gradient p-10 text-center" data-aos="zoom-in">
+        <div class="max-w-xs mx-auto mb-6">
+            http://googleusercontent.com/image_generation_content/1
         </div>
-        <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 shadow-sm">
-            <h3 class="text-lg font-bold mb-3">🚛 "수소 트럭 시대" 타이어가 더 중요해집니다!</h3>
-            <p class="text-slate-600 leading-relaxed">
-                최근 현대자동차의 <b>수소전기트럭 '엑시언트'</b>가 유럽 시장을 휩쓸며 타이어 기술력도 한 단계 진화하고 있습니다. 전기/수소 트럭은 배터리와 탱크 무게 때문에 일반 트럭보다 훨씬 무거워 <b>강력한 내구성과 낮은 구름저항</b>이 필수입니다. <br><br>
-                우리 브리지스톤의 <b>RS002/RD002</b> 역시 이러한 고하중 환경에서도 최상의 마일리지를 뽑아낼 수 있도록 설계된 만큼, 미래 트럭 시장에서도 엠베서더 여러분의 강력한 무기가 될 것입니다!
+        <h3 class="text-2xl font-black text-bs-dark tracking-tighter mb-2">RS002/RD002 전용 스케치</h3>
+        <p class="text-slate-500 text-sm">현대 마이티 유저들이 가장 선호하는 정밀 접지 설계</p>
+    </section>
+
+    <section class="p-8 space-y-8">
+        <div class="flex items-center gap-3 border-l-4 border-bs-red pl-4" data-aos="fade-right">
+            <h2 class="text-2xl font-black text-bs-dark italic">01. MARKET TREND</h2>
+        </div>
+        
+        <div class="bg-white rounded-3xl p-8 border border-slate-100 shadow-xl" data-aos="fade-up">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="bg-blue-100 p-2 rounded-lg text-blue-600"><i data-lucide="trending-up"></i></div>
+                <h3 class="text-xl font-bold">5월 물동량 증가, 타이어가 돈 벌어줍니다</h3>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-6">
+                5월은 가정의 달 특수로 신선식품 및 선물류 배송 물량이 <b>평균 15% 이상 급증</b>하는 시기입니다. 잦은 제동과 가속이 반복되는 도심 주행에서 타이어 마모는 평소보다 1.2배 빠르게 진행됩니다. <br><br>
+                브리지스톤 <b>RD002</b>는 이러한 '스톱-앤-고(Stop-and-Go)' 환경에서 최적화된 블록 배열로 열 발생을 억제합니다. 같은 기름으로 더 멀리 가는 기술, 엠베서더 여러분이 자신 있게 권하는 이유입니다.
             </p>
+            <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-blue-400 italic text-sm">
+                "엠베서더 팁: 5월 한 달간 마일리지를 체크해 보세요. RD002의 진가를 보게 될 것입니다."
+            </div>
         </div>
     </section>
 
-    <section class="p-8 bg-may-green/5">
-        <div class="flex items-center gap-2 mb-6 text-may-green">
-            <i data-lucide="smile" class="w-6 h-6"></i>
-            <h2 class="text-xl font-black italic">Trucker's Break: 오늘의 한입 유머</h2>
+    <section class="p-8 bg-slate-50">
+        <div class="flex items-center gap-3 border-l-4 border-bs-red pl-4 mb-8" data-aos="fade-right">
+            <h2 class="text-2xl font-black text-bs-dark italic">02. SAFETY CHECK</h2>
         </div>
-        <div class="relative bg-white p-8 rounded-3xl border-2 border-dashed border-may-green/20">
-            <p class="text-lg font-medium italic text-slate-700 leading-relaxed">
-                "어느 노련한 트럭커가 아들에게 타이어 관리법을 가르치며 말했다."<br><br>
-                <span class="text-bs-red font-bold">아버지:</span> "아들아, 타이어 공기압은 인생과 같단다."<br>
-                <span class="text-blue-600 font-bold">아들:</span> "너무 빵빵하면 터지기 때문인가요?"<br>
-                <span class="text-bs-red font-bold">아버지:</span> "아니, 바람이 빠지면 아무리 좋은 엔진이 있어도 한 발자국도 못 가기 때문이지."
-            </p>
-            <div class="mt-4 text-sm text-slate-400 font-bold text-right">- 전국 모든 아버지 트럭커들에게 경의를! -</div>
-        </div>
-    </section>
-
-    <section class="p-8">
-        <div class="flex items-center gap-2 mb-6 text-bs-red">
-            <i data-lucide="cpu" class="w-6 h-6"></i>
-            <h2 class="text-xl font-black italic">TECH INSIGHT: RS002의 비밀</h2>
-        </div>
-        <div class="grid grid-cols-1 gap-4">
-            <div class="flex gap-4 p-6 bg-slate-900 text-white rounded-2xl">
-                <div class="bg-bs-red/20 p-3 rounded-lg self-start">
-                    <i data-lucide="maximize" class="w-6 h-6 text-bs-red"></i>
+        
+        <div class="grid grid-cols-1 gap-6">
+            <div class="group bg-white p-6 rounded-2xl border border-slate-100 hover:border-bs-red transition-all duration-300 shadow-md" data-aos="flip-up">
+                <div class="flex items-center gap-4">
+                    <i data-lucide="thermometer" class="w-8 h-8 text-orange-500 group-hover:scale-110 transition-transform"></i>
+                    <div>
+                        <h4 class="font-black text-lg">노면 온도의 급상승</h4>
+                        <p class="text-slate-500 text-sm">5월 아스팔트 온도는 한낮에 40도를 웃돕니다. 공기압 팽창에 주의하세요.</p>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="font-bold text-lg mb-1">압도적인 트레드 폭(TW)</h4>
-                    <p class="text-slate-400 text-sm">RS002는 기존 제품 대비 접지 면적을 극대화하여 편마모를 획기적으로 줄였습니다. 엠베서더님들이 현장에서 "이거 진짜 오래 가네!"라는 소리를 듣게 될 핵심 기술입니다.</p>
+            </div>
+            
+            <div class="group bg-white p-6 rounded-2xl border border-slate-100 hover:border-bs-red transition-all duration-300 shadow-md" data-aos="flip-up" data-aos-delay="100">
+                <div class="flex items-center gap-4">
+                    <i data-lucide="droplets" class="w-8 h-8 text-blue-500 group-hover:scale-110 transition-transform"></i>
+                    <div>
+                        <h4 class="font-black text-lg">이른 장마 대비 수막현상</h4>
+                        <p class="text-slate-500 text-sm">배수 홈 깊이가 3mm 이하일 경우 미리 교체 상담을 진행하는 것이 좋습니다.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="p-8 border-t border-slate-100">
-        <div class="flex items-center gap-2 mb-6 text-orange-600">
-            <i data-lucide="thermometer-sun" class="w-6 h-6"></i>
-            <h2 class="text-xl font-black italic">MAY CARE: 5월 안전 점검 포인트</h2>
+    <section class="p-8">
+        <div class="flex items-center gap-3 border-l-4 border-bs-red pl-4 mb-8" data-aos="fade-right">
+            <h2 class="text-2xl font-black text-bs-dark italic">03. TRUCKER'S CHOICE</h2>
         </div>
-        <ul class="space-y-4">
-            <li class="flex items-center gap-3 p-4 bg-orange-50 rounded-xl">
-                <i data-lucide="check-circle-2" class="w-5 h-5 text-orange-600"></i>
-                <span class="text-slate-700">기온 상승에 따른 <b>적정 공기압</b> 재점검</span>
-            </li>
-            <li class="flex items-center gap-3 p-4 bg-orange-50 rounded-xl">
-                <i data-lucide="check-circle-2" class="w-5 h-5 text-orange-600"></i>
-                <span class="text-slate-700">여름 장마 전 <b>마모 한계선(1.6mm)</b> 미리 확인</span>
-            </li>
-            <li class="flex items-center gap-3 p-4 bg-orange-50 rounded-xl">
-                <i data-lucide="check-circle-2" class="w-5 h-5 text-orange-600"></i>
-                <span class="text-slate-700">장거리 고속 주행 시 <b>2시간마다 타이어 열 식히기</b></span>
-            </li>
-        </ul>
+        
+        <div class="bg-gradient-to-r from-bs-dark to-slate-800 text-white rounded-3xl p-8 overflow-hidden relative" data-aos="zoom-in-up">
+            <i data-lucide="utensils" class="absolute -right-4 -bottom-4 w-32 h-32 text-white/5"></i>
+            <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-yellow-400">
+                <i data-lucide="star" class="fill-current"></i> 5월의 추천 휴게소 맛집
+            </h3>
+            <div class="space-y-4 relative z-10">
+                <div class="border-b border-white/10 pb-3">
+                    <b class="text-lg">[중부내륙] 괴산휴게소(창원방향)</b>
+                    <p class="text-slate-400 text-sm italic mt-1">"엄나무 닭곰탕: 장거리 피로가 한 번에 풀리는 맛!"</p>
+                </div>
+                <div>
+                    <b class="text-lg">[경부] 칠곡휴게소(서울방향)</b>
+                    <p class="text-slate-400 text-sm italic mt-1">"수제 돈가스: 기사님들 사이에서 이미 소문난 로컬 맛집"</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer class="bg-slate-50 p-12 text-center">
-        <p class="text-2xl font-black text-slate-800 mb-8 tracking-tighter">
-            "가장 신뢰받는 길 위의 동반자,<br>브리지스톤 정기현입니다."
-        </p>
-        <a href="tel:01063892603" class="inline-flex items-center gap-3 bg-bs-red text-white px-10 py-5 rounded-2xl font-black text-xl shadow-xl hover:bg-red-700 transition-all active:scale-95 mb-10">
-            <i data-lucide="phone-call" class="w-6 h-6"></i>
-            기술지원 및 문의하기
-        </a>
-        <div class="text-[10px] text-slate-400 uppercase tracking-widest leading-loose">
-            © 2026 Bridgestone Tire Sales Korea. PS Team<br>
-            Bridgestone Monthly LT Ambassador Newsletter
+    <section class="p-8 text-center" data-aos="fade-up">
+        <div class="bg-yellow-50 rounded-full p-10 border-2 border-dashed border-yellow-200">
+            <i data-lucide="smile" class="w-12 h-12 text-yellow-500 mx-auto mb-4 animate-bounce-slow"></i>
+            <h4 class="text-lg font-black text-slate-800 mb-2">"타이어가 부럽다..."</h4>
+            <p class="text-slate-600 italic">"타이어는 마모되면 새 걸로 교체라도 해주지,<br>내 몸은 마모되는데 연차도 없네!"</p>
+            <p class="mt-4 text-xs text-slate-400 font-bold uppercase tracking-widest">- 웃픈 우리네 이야기 -</p>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 p-12 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-bs-red opacity-5 transform -skew-y-6 translate-y-20"></div>
+        <div class="relative z-10">
+            <p class="text-white text-2xl font-black mb-8 leading-tight tracking-tighter">
+                현장에서 답을 찾는 솔루션 파트너,<br><span class="text-bs-red">브리지스톤 정기현</span>이 함께합니다.
+            </p>
+            <a href="tel:01063892603" class="inline-flex items-center gap-3 bg-bs-red text-white px-10 py-5 rounded-full font-black text-xl shadow-2xl hover:scale-105 active:scale-95 transition-all mb-10">
+                <i data-lucide="phone-forwarded" class="w-6 h-6"></i>
+                긴급 기술지원 연결
+            </a>
+            <div class="text-[10px] text-slate-500 uppercase tracking-[0.2em] space-y-2">
+                <p>© 2026 BRIDGESTONE TIRE SALES KOREA. ALL RIGHTS RESERVED.</p>
+                <p>PS TEAM | QUALITY & TECHNOLOGY SOLUTION</p>
+            </div>
         </div>
     </footer>
 </div>
 
 <script>
+    // 애니메이션 및 아이콘 초기화
+    AOS.init({ duration: 800, offset: 100, once: true });
     lucide.createIcons();
 </script>
+
 </body>
 </html>
