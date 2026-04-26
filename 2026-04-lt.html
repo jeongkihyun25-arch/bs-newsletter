@@ -1,164 +1,82 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026년 4월 월간 LT 엠베서더 뉴스레터</title>
-    <style>
-        :root { --bs-red: #D71921; --bs-dark: #1a1a1a; --bs-gray: #f4f4f4; }
-        
-        /* 글씨체 설정: 맑은 고딕 최우선 */
-        body { 
-            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; 
-            line-height: 1.8; color: #333; margin: 0; padding: 0; background-color: #f0f0f0; 
-        }
-        .container { max-width: 650px; margin: 0 auto; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        
-        /* 상단 네비 바 */
-        .top-nav { background-color: var(--bs-red); color: white; padding: 15px 25px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 1000; }
-        .logo-img { height: 32px; background: white; padding: 4px; border-radius: 4px; }
-        .btn-back { text-decoration: none; color: white; font-size: 13px; font-weight: bold; border: 1px solid white; padding: 6px 15px; border-radius: 20px; transition: 0.3s; }
-        .btn-back:hover { background: white; color: var(--bs-red); }
-
-        /* 히어로 섹션 */
-        .hero { background: #1a1a1a; color: #fff; padding: 60px 40px; text-align: center; }
-        .hero h1 { margin: 0; font-size: 30px; font-weight: 900; letter-spacing: -1.5px; }
-        .hero p { margin: 15px 0 0; font-size: 18px; color: var(--bs-red); font-weight: bold; }
-
-        /* 인사말 */
-        .section-intro { padding: 45px 35px; border-bottom: 1px solid #eee; background: #fdfdfd; }
-        .section-intro h2 { font-size: 22px; margin-bottom: 15px; color: var(--bs-dark); }
-        .section-intro p { font-size: 16px; color: #555; word-break: keep-all; }
-
-        /* 공통 섹션 스타일 */
-        .section { padding: 45px 35px; border-bottom: 1px solid #f0f0f0; }
-        .section-title { font-size: 20px; font-weight: 800; color: var(--bs-red); margin-bottom: 25px; display: flex; align-items: center; gap: 10px; }
-        .section-title::after { content: ''; flex: 1; height: 1px; background: #eee; }
-
-        /* 카드형 레이아웃 */
-        .info-card { background: #f9f9f9; border-radius: 12px; padding: 25px; margin-bottom: 25px; border: 1px solid #efefef; }
-        .info-card h3 { margin: 0 0 15px 0; font-size: 18px; color: var(--bs-dark); }
-        .info-card p { margin: 0; font-size: 15px; color: #666; }
-
-        /* 제품 정보 강조 */
-        .product-box { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 15px; }
-        .product-item { background: #fff; padding: 20px; border-radius: 8px; border-left: 4px solid var(--bs-red); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .product-item b { font-size: 17px; color: #000; display: block; margin-bottom: 5px; }
-
-        /* 워런티 박스 (강조) */
-        .warranty-box { background: var(--bs-dark); color: #fff; border-radius: 15px; padding: 35px; text-align: center; }
-        .warranty-title { font-size: 24px; font-weight: 800; color: var(--bs-red); margin-bottom: 20px; }
-        .warranty-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; border-top: 1px solid #444; padding-top: 20px; }
-        .warranty-item b { font-size: 18px; display: block; margin-bottom: 5px; }
-        .warranty-item span { font-size: 12px; color: #aaa; }
-
-        /* 마케팅 리스트 */
-        .mkt-list { list-style: none; padding: 0; margin: 0; }
-        .mkt-list li { margin-bottom: 20px; padding-left: 30px; position: relative; }
-        .mkt-list li::before { content: '•'; position: absolute; left: 10px; color: var(--bs-red); font-size: 20px; font-weight: bold; }
-        .mkt-list li b { font-size: 16px; display: block; margin-bottom: 5px; color: #222; }
-
-        /* 하단 슬로건 & 푸터 */
-        .slogan-section { padding: 50px 35px; text-align: center; background: #fff8f8; }
-        .slogan-text { font-size: 20px; font-weight: 800; color: var(--bs-dark); letter-spacing: -1px; word-break: keep-all; }
-        
-        .footer { background: #f4f4f4; padding: 50px 35px; text-align: center; }
-        .btn-call { display: block; background: var(--bs-red); color: #fff; text-decoration: none; padding: 18px; border-radius: 8px; font-weight: bold; font-size: 18px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(215,25,33,0.3); }
-        .btn-index { display: inline-block; color: #888; text-decoration: underline; font-size: 14px; }
-    </style>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>2026-04월 9호</title>
+    <script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700;900&display=swap'); body { font-family: 'Pretendard', sans-serif; background-color: #f8fafc; } .paper-bg { background-color: #ffffff; background-image: radial-gradient(#e2e8f0 1px, transparent 1px); background-size: 20px 20px; } .hero-bg { background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=1000?v=1777194667'); background-size: cover; background-position: center; }</style>
 </head>
-<body>
+<body class="text-slate-800 pb-10"><div class="max-w-xl mx-auto shadow-2xl min-h-screen paper-bg overflow-hidden">
+<nav class="bg-slate-900 px-6 py-4 border-b-4 border-[#D71921] flex justify-between items-center sticky top-0 z-50 shadow-md"><img src="https://jeongkihyun25-arch.github.io/check-news-letter/logo.png?v=1777194667" alt="logo" class="h-4"><span class="text-[11px] font-black text-slate-400 uppercase tracking-tighter italic">Bridgestone Ambassador Only</span></nav>
+<header class="hero-bg text-white py-20 px-8 text-center border-b-8 border-slate-900"><div data-aos="fade-down"><div class="inline-block bg-[#D71921] text-white text-[11px] font-black px-4 py-1.5 rounded-full mb-6 shadow-xl">2026-04월 9호 발행</div><h1 class="text-3xl font-black italic leading-tight mb-8 drop-shadow-2xl">여름철 상용차 타이어,<br>이것만은 꼭!</h1><div class="bg-black/50 backdrop-blur-md p-6 rounded-3xl border border-white/20 text-left"><p class="text-slate-100 text-[14px] font-medium leading-[1.8] break-keep">여름이 다가오는 5월, 아스팔트 온도가 급상승하며 타이어 관리가 비상입니다. 
+특히 고하중을 견디는 RD002 같은 구동축 타이어는 냉간 시 공기압 체크가 필수입니다. 
 
-<div class="container">
-    <div class="top-nav">
-        <img src="logo.png" alt="Bridgestone" class="logo-img">
-        <a href="index.html" class="btn-back">◀ 목록보기</a>
-    </div>
+사장님들, 매장 방문 고객께 '공기압 조정'의 중요성만 잘 설명해 주셔도 안전 예방은 물론 큰 신뢰를 얻으실 수 있습니다. 이번 주 업계 소식도 확인하시고 활기찬 한 주 되십시오!</p></div></div></header>
 
-    <div class="hero">
-        <h1>2026년 4월 월간 뉴스레터</h1>
-        <p>LSR NEW GENERATION: RS002 & RD002</p>
-    </div>
-
-    <div class="section-intro">
-        <h2>LT 엠베서더 여러분, 안녕하십니까!</h2>
-        <p>
-            PS팀 정기현입니다. 한국 물류의 핵심인 현대 마이티 등 라이트 트럭(LT) 시장의 판도를 바꿀 <b>신제품 RS002/RD002</b> 런칭 소식을 전해드립니다.
-        </p>
-    </div>
-
-    <div class="section">
-        <div class="section-title">📍 전국 런칭 세미나 개최</div>
-        <div class="info-card">
-            <p>경기, 부산, 전라 등 전국 거점을 중심으로 릴레이 세미나를 진행합니다. 신제품의 성능을 직접 확인하실 수 있는 교육과 함께 참석하시는 엠베서더 분들께는 <b>프리미엄 기프트 패키지</b>를 증정합니다.</p>
+<section class="p-6 pt-10">
+    <div class="bg-gradient-to-r from-slate-900 to-slate-800 text-white p-7 rounded-3xl mb-10 shadow-2xl relative overflow-hidden" data-aos="fade-up"><div class="absolute -right-6 -top-6 w-20 h-20 bg-[#D71921] rounded-full opacity-20 blur-2xl"></div><h2 class="text-[19px] font-black mb-3 flex items-center gap-3"><i data-lucide="zap" class="text-[#D71921]"></i> 반갑습니다, 사장님!</h2><p class="text-[14px] text-slate-300 leading-[1.7] font-medium">언제나 현장의 소리에 귀 기울이시는 사장님들께 드리는 소식입니다. 트럭 타이어 시장의 흐름을 읽고 영업에 날개를 다십시오!</p></div>
+    
+    <div class="grid grid-cols-2 gap-3 mb-6">
+    <div class="col-span-2 border-2 border-red-200 p-6 bg-white rounded-3xl shadow-sm flex flex-col justify-between" data-aos="fade-up">
+        <div>
+            <span class="inline-block bg-[#D71921] text-white px-2 py-0.5 font-black text-[10px] mb-3 rounded shadow-md uppercase">특장 모빌리티</span>
+            <h3 class="font-black text-[18px] mb-3 leading-tight break-keep">정부·지자체·산업계 한자리에…'제1회 특장모빌리티의 날' 개최</h3>
+            <p class="text-[14px] text-slate-600 leading-[1.7] break-keep">제1회 특장모빌리티의 날 행사가 성황리에 개최되며, 특수 목적 차량의 발전 방향과 신기술이 대거 소개되었습니다. 정부, 지자체, 산업계가 한데 모여 미래 상용차 시장의 변화를 논의하는 중요한 자리였습니다. 이는 특장차 시장의 성장과 함께 특수 환경에 맞는 고성능 타이어 수요 증가로 이어질 전망입니다. <br><b class="text-slate-900 mt-2 block italic text-[13px]">💡 영업 포인트: 특장차 시장은 특정 용도에 맞는 고성능 타이어를 요구합니다. 브리지스톤은 다양한 특장차량의 까다로운 요구를 충족하는 맞춤형 타이어 솔루션을 제공하여, 사장님의 매장이 미래 특장차 타이어 시장을 선점할 기회가 됩니다.</b></p>
         </div>
+        <a href="https://www.cvinfo.com/news/articleView.html?idxno=31089" target="_blank" class="mt-5 inline-block text-[12px] font-bold text-[#D71921] border-b-2 border-[#D71921] w-fit">원문 읽기 →</a>
     </div>
-
-    <div class="section">
-        <div class="section-title">💎 기존 대비 압도적인 성능 향상</div>
-        <p style="font-size: 15px; color: #777; margin-bottom: 20px;">현장의 피드백을 수렴하여 기존 제품군 대비 비약적인 발전을 이루어냈습니다.</p>
-        
-        <div class="product-box">
-            <div class="product-item">
-                <b>RS002 (조향축)</b>
-                기존 R156 대비 훨씬 더 길어진 예상 수명을 자랑합니다. 특히 트레드 폭(TW)을 넓혀 주행 안정성을 강화하였으며, 불규칙 마모 저항성 테스트에서 동급 최상위 수준을 기록했습니다.
-            </div>
-            <div class="product-item">
-                <b>RD002 (구동축)</b>
-                스테디셀러인 M729 대비 더욱 향상된 수명 패턴을 적용하여 장거리 운행 유저들의 수익성을 극대화했습니다.
-            </div>
+    <div class="col-span-1 border-2 border-red-50 p-4 bg-white rounded-2xl shadow-sm flex flex-col justify-between" data-aos="fade-up">
+        <div>
+            <span class="inline-block bg-red-50 text-[#D71921] border border-red-200 px-1.5 py-0.5 font-black text-[9px] mb-2 rounded">신차 출시</span>
+            <h4 class="font-bold text-[14px] mb-2 leading-tight break-keep">타타대우, 또 하나의 ‘쎈’트럭 5톤급 ‘하이쎈’ 출시</h4>
+            <p class="text-[12px] text-slate-600 leading-normal break-keep">타타대우가 5톤급 중형 트럭 '하이쎈'을 새롭게 출시하며 시장 공략에 나섰습니다. 높은 적재 효율과 경제성을 겸비한 하이쎈은 중단거리 운송 시장에 최적화된 모델로 기대를 모으고 있습니다. <br><b class="text-slate-800 text-[11px] block mt-2">💡 영업 포인트: 신차 출시는 새로운 타이어 교체 수요로 직결됩니다. 하이쎈의 주행 특성에 맞는 내구성과 연비 효율이 뛰어난 브리지스톤 타이어로 고객에게 최적의 솔루션을 제안하십시오.</b></p>
         </div>
+        <a href="https://www.cvinfo.com/news/articleView.html?idxno=31085" target="_blank" class="mt-3 text-[11px] font-bold text-[#D71921] flex items-center gap-1">자세히 보기 &rarr;</a>
     </div>
-
-    <div class="section">
-        <div class="warranty-box">
-            <div class="warranty-title">🛡️ 6개월 '운행 안심 보장'</div>
-            <p style="font-size: 14px; margin-bottom: 25px; opacity: 0.8;">엠베서더 분들의 판매 자신감을 위해 품질 보증 기준을 파격적으로 확대했습니다.</p>
-            <div class="warranty-grid">
-                <div class="warranty-item">
-                    <b>6개월</b>
-                    <span>구입일 무상교환<br>(기존 대비 2배)</span>
-                </div>
-                <div class="warranty-item">
-                    <b>30%</b>
-                    <span>마모 기준<br>확대 적용</span>
-                </div>
-                <div class="warranty-item">
-                    <b>1:1</b>
-                    <span>1본 한해<br>새 제품 교환</span>
-                </div>
-            </div>
+    <div class="col-span-1 border-2 border-red-50 p-4 bg-white rounded-2xl shadow-sm flex flex-col justify-between" data-aos="fade-up">
+        <div>
+            <span class="inline-block bg-red-50 text-[#D71921] border border-red-200 px-1.5 py-0.5 font-black text-[9px] mb-2 rounded">물류 혁신</span>
+            <h4 class="font-bold text-[14px] mb-2 leading-tight break-keep">국토부, AI 기반 '배차·경로 최적화 시스템' 물류신기술 9호 지정</h4>
+            <p class="text-[12px] text-slate-600 leading-normal break-keep">국토부가 AI 기반의 '배차·경로 최적화 시스템'을 물류신기술 9호로 지정했습니다. 이는 물류 효율성을 혁신적으로 높여 운송 시간 단축과 운영 비용 절감에 크게 기여할 것입니다. <br><b class="text-slate-800 text-[11px] block mt-2">💡 영업 포인트: 물류 효율 증가는 트럭의 운행 거리와 빈도를 늘릴 수 있습니다. 주행 거리가 길어질수록 타이어 마모는 빨라지므로, 정기적인 점검 및 고수명 브리지스톤 타이어의 필요성을 강조하십시오.</b></p>
         </div>
+        <a href="https://www.cvinfo.com/news/articleView.html?idxno=31080" target="_blank" class="mt-3 text-[11px] font-bold text-[#D71921] flex items-center gap-1">자세히 보기 &rarr;</a>
     </div>
-
-    <div class="section">
-        <div class="section-title">🌐 온/오프라인 통합 마케팅 지원</div>
-        <ul class="mkt-list">
-            <li>
-                <b>LSR 체험단 운영</b>
-                실제 마이티 유저들을 대상으로 제품 체험단을 모집하여, 현장의 생생한 만족도 데이터를 확보하고 공유할 예정입니다.
-            </li>
-            <li>
-                <b>월간 디지털 뉴스레터</b>
-                매달 카카오톡과 SNS를 통해 유저 인터뷰, 최신 마켓 정보, SNS 전용 컨텐츠를 정기적으로 배포하여 엠베서더 여러분의 영업을 지원합니다.
-            </li>
-            <li>
-                <b>현장 세일즈 툴킷 지원</b>
-                대형 현수막, 포스터, 테스트 데이터 보고서 등 강력한 오프라인 홍보물을 각 대리점에 지원합니다.
-            </li>
-        </ul>
+    <div class="col-span-1 border-2 border-red-50 p-4 bg-white rounded-2xl shadow-sm flex flex-col justify-between" data-aos="fade-up">
+        <div>
+            <span class="inline-block bg-red-50 text-[#D71921] border border-red-200 px-1.5 py-0.5 font-black text-[9px] mb-2 rounded">금융/서비스</span>
+            <h4 class="font-bold text-[14px] mb-2 leading-tight break-keep">현대커머셜, '고트럭' 리뉴얼…상용차 맞춤 서비스 강화</h4>
+            <p class="text-[12px] text-slate-600 leading-normal break-keep">현대커머셜이 상용차 전문 금융 플랫폼 '고트럭'을 리뉴얼하고 맞춤형 금융 및 운송 서비스를 강화합니다. 이를 통해 상용차 구매 및 운영에 대한 차주들의 부담을 덜어줄 계획입니다. <br><b class="text-slate-800 text-[11px] block mt-2">💡 영업 포인트: 금융 서비스 강화는 신차 구매나 차량 업그레이드를 촉진합니다. 새로운 차량에 최적화된 브리지스톤 타이어와 함께, 체계적인 타이어 관리 서비스를 제안하여 고객의 총 운송 비용 절감에 기여할 수 있습니다.</b></p>
+        </div>
+        <a href="https://www.cvinfo.com/news/articleView.html?idxno=31074" target="_blank" class="mt-3 text-[11px] font-bold text-[#D71921] flex items-center gap-1">자세히 보기 &rarr;</a>
     </div>
-
-    <div class="slogan-section">
-        <p class="slogan-text">"현장에서 답을 찾는 솔루션 파트너,<br>브리지스톤이 함께합니다."</p>
-    </div>
-
-    <div class="footer">
-        <a href="tel:01063892603" class="btn-call">📞 클레임 및 기술지원 연락하기</a>
-        <a href="index.html" class="btn-index">전체 뉴스레터 목록 보기</a>
-        <p style="margin-top:40px; font-size:11px; color:#bbb;">© 2026 Bridgestone Tire Sales Korea. PS Team</p>
+    <div class="col-span-1 border-2 border-red-50 p-4 bg-white rounded-2xl shadow-sm flex flex-col justify-between" data-aos="fade-up">
+        <div>
+            <span class="inline-block bg-red-50 text-[#D71921] border border-red-200 px-1.5 py-0.5 font-black text-[9px] mb-2 rounded">안전</span>
+            <h4 class="font-bold text-[14px] mb-2 leading-tight break-keep">볼보트럭, 유로 NCAP 중·단거리 트럭 안전성 평가서 '별 5개' 추가 획득</h4>
+            <p class="text-[12px] text-slate-600 leading-normal break-keep">볼보트럭이 유로 NCAP의 중·단거리 트럭 안전성 평가에서 최고 등급인 별 5개를 추가 획득하며 독보적인 안전성을 입증했습니다. 이는 운전자와 보행자 모두의 안전을 최우선으로 하는 볼보트럭의 노력을 보여줍니다. <br><b class="text-slate-800 text-[11px] block mt-2">💡 영업 포인트: 트럭 안전의 핵심 요소는 바로 타이어입니다. 탁월한 접지력과 제동 성능을 자랑하는 브리지스톤 타이어는 볼보트럭처럼 안전을 중시하는 고객들에게 최고의 선택임을 강조하여 판매 기회를 만드십시오.</b></p>
+        </div>
+        <a href="https://www.cvinfo.com/news/articleView.html?idxno=31087" target="_blank" class="mt-3 text-[11px] font-bold text-[#D71921] flex items-center gap-1">자세히 보기 &rarr;</a>
     </div>
 </div>
+    
+    <div class="bg-red-50 border-l-[6px] border-[#D71921] p-6 rounded-r-3xl shadow-sm my-10" data-aos="fade-right">
+        <div class="flex items-center gap-2 mb-3">
+            <span class="text-2xl">☕</span>
+            <h3 class="font-black text-[16px] text-[#D71921]">잠깐, 쉬어가시죠!</h3>
+        </div>
+        <p class="text-[14px] text-slate-800 font-bold leading-relaxed break-keep">가끔 '타이어는 그냥 까만 고무 덩어리 아니었어?' 하고 묻는 손님들을 보면, 우리 사장님들 속으로 '아이고 사장님, 그 까만 고무 덩어리가 얼마나 많은 기술과 땀방울로 만들어졌는데요!' 하실 겁니다. 타이어 갈다 보면 밥 먹는 시간도 아까운 날들이 많지만, 그래도 휠 밸런스 딱 맞추고 뿌듯할 때가 최고죠?</p>
+    </div>
 
-</body>
-</html>
+    <div class="bg-slate-50 p-6 rounded-3xl mt-10 shadow-inner" data-aos="fade-up"><h3 class="font-black text-[17px] text-slate-900 mb-4 flex items-center gap-2"><i data-lucide="fuel" class="text-blue-600"></i> 04월 26일 전국 유가 현황</h3><div class="grid grid-cols-2 gap-3"><div class="bg-white p-3 rounded-2xl shadow-sm border border-slate-100"><h4 class="font-bold text-[13px] text-slate-800 mb-2">인천/경기</h4><div class="flex justify-between text-[12px] mb-1"><span>경유</span><b>2,003원 <span class='text-blue-600 font-bold'>▼0</span></b></div><div class="flex justify-between text-[12px]"><span>휘발유</span><b>2,009원</b></div></div><div class="bg-white p-3 rounded-2xl shadow-sm border border-slate-100"><h4 class="font-bold text-[13px] text-slate-800 mb-2">충청</h4><div class="flex justify-between text-[12px] mb-1"><span>경유</span><b>2,001원 <span class='text-red-600 font-bold'>▲0</span></b></div><div class="flex justify-between text-[12px]"><span>휘발유</span><b>2,006원</b></div></div><div class="bg-white p-3 rounded-2xl shadow-sm border border-slate-100"><h4 class="font-bold text-[13px] text-slate-800 mb-2">전라</h4><div class="flex justify-between text-[12px] mb-1"><span>경유</span><b>1,997원 <span class='text-red-600 font-bold'>▲0</span></b></div><div class="flex justify-between text-[12px]"><span>휘발유</span><b>2,002원</b></div></div><div class="bg-white p-3 rounded-2xl shadow-sm border border-slate-100"><h4 class="font-bold text-[13px] text-slate-800 mb-2">경북</h4><div class="flex justify-between text-[12px] mb-1"><span>경유</span><b>1,990원 <span class='text-red-600 font-bold'>▲0</span></b></div><div class="flex justify-between text-[12px]"><span>휘발유</span><b>1,997원</b></div></div><div class="bg-white p-3 rounded-2xl shadow-sm border border-slate-100"><h4 class="font-bold text-[13px] text-slate-800 mb-2">경남</h4><div class="flex justify-between text-[12px] mb-1"><span>경유</span><b>1,994원 <span class='text-red-600 font-bold'>▲0</span></b></div><div class="flex justify-between text-[12px]"><span>휘발유</span><b>1,998원</b></div></div></div></div>
+    
+    <div class="bg-white border-4 border-dashed border-[#D71921] p-8 rounded-[40px] shadow-2xl text-center relative overflow-hidden mt-12" data-aos="zoom-in">
+        <div class="absolute top-0 left-0 w-full h-2 bg-[#D71921]"></div><span class="text-5xl mb-4 block">💪</span><h2 class="text-xl font-black mb-4 text-slate-900 italic">사장님을 응원합니다</h2>
+        <div class="bg-slate-50 p-6 rounded-3xl mb-8 font-bold text-slate-700 text-[15px] break-keep shadow-inner leading-relaxed">대한민국의 든든한 물류를 책임지는 우리 트럭 타이어 사장님들, 늘 감사드립니다. 묵묵히 제 자리에서 최고의 안전과 효율을 위해 애쓰시는 여러분의 노고가 있기에 우리 경제가 흔들림 없이 달려갑니다. 브리지스톤은 언제나 사장님들의 곁에서 최고의 파트너가 될 것을 약속합니다!</div>
+        <div class="grid grid-cols-2 gap-4"><a href="tel:0232102480" class="bg-slate-900 text-white py-4 rounded-2xl flex items-center justify-center gap-2 shadow-lg hover:bg-black active:scale-95 transition-all"><i data-lucide="phone-call" class="w-4 h-4"></i><span class="text-[13px] font-black">기술 지원</span></a><a href="https://www.bridgestone-korea.co.kr" target="_blank" class="bg-[#D71921] text-white py-4 rounded-2xl flex items-center justify-center gap-2 shadow-lg hover:bg-red-700 active:scale-95 transition-all"><i data-lucide="globe" class="w-4 h-4"></i><span class="text-[13px] font-black">홈페이지</span></a></div>
+    </div>
+</section>
+
+<footer class="bg-slate-900 py-12 text-center mt-10"><p class="text-[11px] font-black text-slate-500 uppercase tracking-widest">Solutions for your journey - 브리지스톤 타이어 코리아</p><p class="text-[9px] text-slate-600 mt-2">최종 업데이트: 2026년 04월 26일</p></footer></div>
+<script>AOS.init({ duration: 1000, once: true }); lucide.createIcons();</script></body></html>
