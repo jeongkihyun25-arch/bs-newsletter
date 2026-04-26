@@ -21,61 +21,97 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { 'bs-red': '#D71921', 'bs-dark': '#1a1a1a' }
+                    colors: { 'bs-red': '#D71921', 'bs-dark': '#1a1a1a' },
+                    animation: { 'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite' }
                 }
             }
         }
     </script>
     <style>
-        body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; background-color: #f9fafb; }
-        .card-hover { transition: all 0.3s ease; }
-        .card-hover:hover { transform: translateY(-5px); shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700;900&display=swap');
+        body { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; background-color: #FAFAFA; overflow-x: hidden; }
+        
+        /* 세련된 배경 그리드 패턴 */
+        .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px); }
+        
+        /* 텍스트 그라데이션 */
+        .text-gradient { background: linear-gradient(to right, #D71921, #FF4B4B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* 프리미엄 카드 호버 애니메이션 */
+        .card-premium { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-premium:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -5px rgba(215, 25, 33, 0.1); border-color: rgba(215, 25, 33, 0.2); }
+        .card-icon-wrapper { transition: all 0.3s ease; }
+        .card-premium:hover .card-icon-wrapper { background-color: #D71921; color: white; transform: scale(1.1); }
+        .card-arrow { opacity: 0; transform: translateX(-10px); transition: all 0.3s ease; }
+        .card-premium:hover .card-arrow { opacity: 1; transform: translateX(0); }
     </style>
 </head>
-<body class="text-slate-900">
+<body class="text-slate-900 bg-grid">
 
-    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <img src="https://jeongkihyun25-arch.github.io/bs-newsletter/logo.png" alt="Bridgestone" class="h-7 p-1 bg-white rounded shadow-sm">
+    <nav class="bg-white/70 backdrop-blur-xl sticky top-0 z-50 border-b border-slate-200/60 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="bg-white p-1.5 rounded-lg shadow-sm border border-slate-100">
+                    <img src="https://jeongkihyun25-arch.github.io/bs-newsletter/logo.png" alt="Bridgestone" class="h-6 object-contain">
+                </div>
                 <div class="hidden sm:block">
-                    <h2 class="text-xs font-black text-slate-800 tracking-tighter leading-none">브리지스톤 타이어 세일즈 코리아</h2>
-                    <p class="text-[9px] font-bold text-slate-400 mt-1 uppercase tracking-widest">Archive Hub</p>
+                    <h2 class="text-[13px] font-black text-slate-800 tracking-tighter leading-none">브리지스톤 타이어 세일즈 코리아</h2>
+                    <p class="text-[9px] font-bold text-slate-400 mt-1.5 uppercase tracking-[0.2em]">Archive Hub</p>
                 </div>
             </div>
-            <a href="https://www.bridgestone-korea.co.kr/ko" target="_blank" class="flex items-center gap-2 text-xs font-black text-bs-red hover:bg-red-50 px-4 py-2 rounded-full transition-colors border border-red-100">
-                <i data-lucide="globe" class="w-4 h-4"></i> 공식 홈페이지 바로가기
+            <a href="https://www.bridgestone-korea.co.kr/ko" target="_blank" class="group flex items-center gap-2 text-xs font-black text-slate-600 hover:text-bs-red bg-white hover:bg-red-50 px-5 py-2.5 rounded-full transition-all border border-slate-200 hover:border-red-200 shadow-sm hover:shadow-md">
+                <i data-lucide="globe" class="w-4 h-4 group-hover:animate-pulse"></i> 공식 홈페이지
             </a>
         </div>
     </nav>
 
-    <main class="max-w-5xl mx-auto px-6 py-16">
-        <header class="mb-16" data-aos="fade-up">
-            <h1 class="text-4xl sm:text-5xl font-black tracking-tighter text-slate-900 mb-6 leading-tight">
-                월간 LT 엠베서더<br><span class="text-bs-red underline decoration-red-100 decoration-8 underline-offset-4">뉴스레터 저장소</span>
+    <main class="max-w-6xl mx-auto px-6 py-20 relative">
+        <div class="absolute top-0 right-10 w-96 h-96 bg-red-500/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+        <header class="mb-20 text-center md:text-left" data-aos="fade-up">
+            <div class="inline-flex items-center gap-2 bg-slate-900 text-white text-[10px] font-black px-3 py-1.5 rounded-full mb-6 tracking-widest uppercase shadow-md">
+                <span class="w-1.5 h-1.5 bg-bs-red rounded-full animate-pulse"></span> Resources
+            </div>
+            <h1 class="text-5xl sm:text-6xl font-black tracking-tighter text-slate-900 mb-6 leading-[1.1]">
+                월간 LT 엠베서더<br><span class="text-gradient">뉴스레터 저장소</span>
             </h1>
-            <p class="text-lg text-slate-500 max-w-xl leading-relaxed font-medium">
-                브리지스톤 타이어의 기술력과 현장의 소식을 담은 월간 뉴스레터 아카이브입니다. 엠베서더 여러분의 영업을 지원합니다.
+            <p class="text-lg text-slate-500 max-w-2xl leading-relaxed font-medium mx-auto md:mx-0">
+                브리지스톤 타이어의 압도적인 기술력과 생생한 현장의 소식.<br class="hidden md:block">엠베서더 여러분의 성공적인 비즈니스를 위한 월간 리포트 아카이브입니다.
             </p>
         </header>
 
         <section>
-            <div class="flex items-center gap-3 mb-10" data-aos="fade-right">
-                <div class="bg-bs-red p-2 rounded-lg text-white shadow-lg shadow-red-100"><i data-lucide="layout-grid" class="w-5 h-5"></i></div>
+            <div class="flex items-center gap-4 mb-12" data-aos="fade-right">
+                <div class="bg-gradient-to-br from-bs-red to-red-700 p-2.5 rounded-xl text-white shadow-lg shadow-red-200">
+                    <i data-lucide="layout-grid" class="w-5 h-5"></i>
+                </div>
                 <h3 class="text-2xl font-black text-slate-900 tracking-tighter">발행 리스트</h3>
-                <div class="h-[1px] flex-1 bg-slate-200"></div>
+                <div class="h-[1px] flex-1 bg-gradient-to-r from-slate-200 to-transparent"></div>
             </div>
 
-            <div id="newsletter-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center py-20 text-slate-400">
-                <i data-lucide="loader-2" class="w-8 h-8 mx-auto animate-spin mb-2"></i>
-                <p>목록을 불러오고 있습니다...</p>
+            <div id="newsletter-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div class="bg-white border border-slate-100 p-8 rounded-[2rem] h-60 animate-pulse-fast shadow-sm">
+                    <div class="w-14 h-14 bg-slate-100 rounded-2xl mb-6"></div>
+                    <div class="h-6 bg-slate-100 rounded-md w-3/4 mb-3"></div>
+                    <div class="h-4 bg-slate-50 rounded-md w-1/2"></div>
+                </div>
+                <div class="bg-white border border-slate-100 p-8 rounded-[2rem] h-60 animate-pulse-fast shadow-sm delay-100">
+                    <div class="w-14 h-14 bg-slate-100 rounded-2xl mb-6"></div>
+                    <div class="h-6 bg-slate-100 rounded-md w-3/4 mb-3"></div>
+                    <div class="h-4 bg-slate-50 rounded-md w-1/2"></div>
+                </div>
+                <div class="bg-white border border-slate-100 p-8 rounded-[2rem] h-60 animate-pulse-fast shadow-sm delay-200 hidden lg:block">
+                    <div class="w-14 h-14 bg-slate-100 rounded-2xl mb-6"></div>
+                    <div class="h-6 bg-slate-100 rounded-md w-3/4 mb-3"></div>
+                    <div class="h-4 bg-slate-50 rounded-md w-1/2"></div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-slate-50 border-t border-slate-100 py-16 px-6 text-center">
-        <p class="text-[10px] font-black text-slate-300 tracking-[0.4em] uppercase mb-4 italic">Solutions for your journey</p>
-        <p class="text-[11px] text-slate-400 font-medium">© 2026 Bridgestone Tire Sales Korea. PS Team</p>
+    <footer class="bg-white border-t border-slate-200 py-16 px-6 text-center mt-10 relative z-10">
+        <p class="text-[10px] font-black text-slate-300 tracking-[0.5em] uppercase mb-4 italic">Solutions for your journey</p>
+        <p class="text-xs text-slate-400 font-medium tracking-tight">© 2026 Bridgestone Tire Sales Korea. PS Team</p>
     </footer>
 
     <script>
@@ -86,33 +122,49 @@
             const listElement = document.getElementById('newsletter-list');
             try {
                 const response = await fetch(`https://api.github.com/repos/${USERNAME}/${REPO}/contents/`);
+                
+                if (!response.ok) throw new Error('API Rate limit or network error');
                 const files = await response.json();
 
                 const newsletters = files
                     .filter(file => file.name.startsWith('20') && file.name.endsWith('.html') && file.name !== 'index.html')
                     .sort((a, b) => b.name.localeCompare(a.name));
 
+                // 스켈레톤 로더 제거
+                listElement.innerHTML = '';
+
                 if (newsletters.length === 0) {
-                    listElement.innerHTML = '<div class="col-span-full py-10 font-bold italic">발행된 내역이 없습니다.</div>';
+                    listElement.innerHTML = `
+                        <div class="col-span-full py-20 flex flex-col items-center justify-center text-slate-400 bg-white rounded-[2rem] border border-dashed border-slate-200">
+                            <i data-lucide="inbox" class="w-12 h-12 mb-4 opacity-50"></i>
+                            <p class="font-bold tracking-tight">아직 발행된 뉴스레터가 없습니다.</p>
+                        </div>`;
+                    lucide.createIcons();
                     return;
                 }
 
-                listElement.innerHTML = '';
                 newsletters.forEach((file, index) => {
                     const isNew = index === 0;
                     const nameParts = file.name.replace('.html', '').split('-');
                     const displayName = nameParts.length >= 2 ? `${nameParts[0]}년 ${nameParts[1]}월호` : file.name.replace('.html', '');
                     
                     const cardHtml = `
-                        <a href="${file.name}" class="card-hover group bg-white border border-slate-200 p-8 rounded-[2rem] flex flex-col justify-between h-56 relative" data-aos="fade-up" data-aos-delay="${index * 50}">
-                            ${isNew ? '<div class="absolute right-6 top-6"><span class="bg-bs-red text-white text-[9px] font-black px-2 py-0.5 rounded-full ring-4 ring-red-50">NEW</span></div>' : ''}
-                            <div class="bg-slate-50 w-12 h-12 rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-bs-red group-hover:text-white transition-all duration-300">
+                        <a href="${file.name}" class="card-premium group relative bg-white border border-slate-200 p-8 rounded-[2rem] flex flex-col justify-between h-60 overflow-hidden" data-aos="fade-up" data-aos-delay="${index * 50}">
+                            ${isNew ? '<div class="absolute right-6 top-6 z-10"><span class="bg-bs-red text-white text-[9px] font-black px-2.5 py-1 rounded-full shadow-md shadow-red-200 flex items-center gap-1"><span class="w-1 h-1 bg-white rounded-full animate-pulse"></span>NEW</span></div>' : ''}
+                            
+                            <div class="card-icon-wrapper w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 mb-6 border border-slate-100">
                                 <i data-lucide="file-text" class="w-6 h-6"></i>
                             </div>
-                            <div class="text-left">
-                                <h4 class="text-xl font-black text-slate-800 tracking-tighter mb-1">${displayName}</h4>
-                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Bridgestone Newsletter</p>
+                            
+                            <div class="relative z-10">
+                                <h4 class="text-2xl font-black text-slate-800 tracking-tighter mb-1.5 group-hover:text-bs-red transition-colors">${displayName}</h4>
+                                <div class="flex items-center justify-between">
+                                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">LT Ambassador Report</p>
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-bs-red card-arrow"></i>
+                                </div>
                             </div>
+                            
+                            <i data-lucide="book-open" class="absolute -right-6 -bottom-6 w-32 h-32 text-slate-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -rotate-12 pointer-events-none"></i>
                         </a>
                     `;
                     listElement.insertAdjacentHTML('beforeend', cardHtml);
@@ -121,11 +173,17 @@
                 lucide.createIcons();
                 AOS.refresh();
             } catch (error) {
-                listElement.innerHTML = '<div class="col-span-full text-red-400">데이터를 불러올 수 없습니다.</div>';
+                listElement.innerHTML = `
+                    <div class="col-span-full py-16 flex flex-col items-center justify-center text-red-400 bg-red-50 rounded-[2rem] border border-red-100">
+                        <i data-lucide="alert-circle" class="w-10 h-10 mb-3"></i>
+                        <p class="font-bold">데이터를 불러오는 중 문제가 발생했습니다.</p>
+                        <button onclick="location.reload()" class="mt-4 px-4 py-2 bg-white text-red-500 rounded-full text-xs font-bold shadow-sm hover:shadow-md transition-all">새로고침</button>
+                    </div>`;
+                lucide.createIcons();
             }
         }
 
-        AOS.init({ duration: 800, once: true });
+        AOS.init({ duration: 800, once: true, offset: 50 });
         loadNewsletters();
         lucide.createIcons();
     </script>
