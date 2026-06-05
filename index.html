@@ -6,10 +6,10 @@
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="📢 브리지스톤 LT 엠베서더 뉴스레터 아카이브">
-    <meta property="og:description" content="브리지스톤 타이어 공식 월간 뉴스레터 저장소입니다.">
+    <meta property="og:description" content="브리지스톤 타이어 공식 뉴스레터 저장소입니다.">
     <meta property="og:image" content="https://jeongkihyun25-arch.github.io/bs-newsletter/logo.png">
 
-    <title>월간 LT 엠베서더 뉴스레터 아카이브</title>
+    <title>LT 엠베서더 뉴스레터 아카이브</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -100,9 +100,13 @@
                 if (!response.ok) throw new Error('Network response was not ok');
                 const files = await response.json();
 
+                // 2026-06-01.html을 1호로, 나머지는 02.html, 03.html 등 숫자 형태 파일로 필터링 후 내림차순 정렬
                 const newsletters = files
-                    .filter(file => file.name.startsWith('20') && file.name.endsWith('.html') && file.name !== 'index.html')
-                    .sort((a, b) => b.name.localeCompare(a.name));
+                    .filter(file => file.name === '2026-06-01.html' || /^\d{2}\.html$/.test(file.name))
+                    .sort((a, b) => {
+                        const getIssueNumber = (name) => name === '2026-06-01.html' ? 1 : parseInt(name, 10);
+                        return getIssueNumber(b) - getIssueNumber(a);
+                    });
 
                 listElement.innerHTML = '';
 
@@ -113,11 +117,10 @@
 
                 newsletters.forEach((file, index) => {
                     const isNew = index === 0;
-                    const nameParts = file.name.replace('.html', '').split('-');
                     
-                    const year = nameParts[0];
-                    const month = nameParts[1];
-                    const displayName = `${year}년 ${month}월호`;
+                    // 2026-06-01.html은 1호, 그 외는 파일명에서 숫자 추출
+                    const issueNumber = file.name === '2026-06-01.html' ? 1 : parseInt(file.name, 10);
+                    const displayName = `제 ${issueNumber}호`;
                     
                     const cardHtml = `
                         <a href="${file.name}" class="magazine-card group flex flex-col sm:flex-row bg-white border border-slate-200 rounded-[2rem] overflow-hidden shadow-sm relative" data-aos="fade-up" data-aos-delay="${index * 50}">
@@ -126,10 +129,10 @@
                                 <img src="${DEFAULT_IMAGE}" alt="Cover" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700">
                                 
                                 <div class="absolute inset-0 flex flex-col items-center justify-center text-white bg-black/40 backdrop-blur-[2px] group-hover:bg-black/10 group-hover:backdrop-blur-0 transition-all duration-500">
-                                    <span class="text-xs font-bold text-white/90 mb-1.5 tracking-widest border-b border-white/30 pb-1">${year}년</span>
+                                    <span class="text-xs font-bold text-white/90 mb-1.5 tracking-widest border-b border-white/30 pb-1">ISSUE</span>
                                     <div class="flex items-baseline drop-shadow-xl text-white">
-                                        <span class="text-5xl font-black">${month}</span>
-                                        <span class="text-xl font-bold ml-1">월호</span>
+                                        <span class="text-5xl font-black">${String(issueNumber).padStart(2, '0')}</span>
+                                        <span class="text-xl font-bold ml-1">호</span>
                                     </div>
                                 </div>
                                 
@@ -138,7 +141,7 @@
                             
                             <div class="sm:w-3/5 p-6 sm:p-8 flex flex-col justify-center relative">
                                 <div class="mb-4">
-                                    <span class="text-[10px] font-black text-red-500 bg-red-50 px-2.5 py-1 rounded tracking-widest mb-3 inline-block">월간 리포트</span>
+                                    <span class="text-[10px] font-black text-red-500 bg-red-50 px-2.5 py-1 rounded tracking-widest mb-3 inline-block">뉴스레터 리포트</span>
                                     <h4 class="text-2xl font-black text-slate-800 tracking-tighter group-hover:text-bs-red transition-colors">${displayName}</h4>
                                 </div>
                                 <p class="text-[13px] text-slate-500 font-medium leading-relaxed line-clamp-2 mb-6">
