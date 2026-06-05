@@ -237,23 +237,20 @@
     AOS.init({ duration: 800, once: true }); 
     lucide.createIcons();
 </script>
-<!-- 💡 보증 프로그램 상세 팝업창 -->
-    <div id="warrantyModal" class="hidden fixed inset-0 z-[100] bg-black/80 p-4 flex items-center justify-center">
-        <div class="bg-white rounded-3xl p-6 max-w-lg w-full max-h-[80vh] overflow-y-auto shadow-2xl">
-            <h2 class="text-2xl font-black text-[#D71921] mb-4">운행 안심 보장 프로그램</h2>
-            <div class="space-y-4 text-[14px] text-slate-700">
-                <p><b>대상 제품:</b> R-Steer 002 LSR, R-Drive 002 LSR (모든 사이즈)</p>
-                <div class="bg-slate-100 p-3 rounded-xl border border-slate-200">
-                    <p><b>보증 기간:</b> 타이어 구입일로부터 6개월 이내, 또는 마모율 30% 이내[cite: 1]</p>
-                </div>
-                <p><b>보증 내용:</b> 운행 중 사용자 과실(도로 위험으로 인한 사이드월, 트레드, 비드 파손 등)로 인해 수리가 불가한 경우, <b>해당 제품 1본에 한해 1회 무상 교환</b>[cite: 1]</p>
-                <p><b>신청 방법:</b> 구매 영수증 지참 후 구매처 방문 → 브리지스톤 확인 후 교환[cite: 1]</p>
-                <div class="bg-red-50 p-3 rounded-xl border border-red-200 text-[12px] text-red-800">
-                    <p><b>※ 제외 항목:</b> 차량 사고, 고의 파손, 특수차 장착, 출고시 장착 타이어(OE), 이상 마모/조기 마모 타이어 등[cite: 1]</p>
-                </div>
+<!-- 💡 보증 프로그램 상세 팝업창 (PDF 직접 출력) -->
+    <div id="warrantyModal" class="hidden fixed inset-0 z-[100] bg-black/80 p-2 flex items-center justify-center">
+        <div class="bg-white rounded-3xl p-2 max-w-lg w-full max-h-[90vh] flex flex-col shadow-2xl">
+            <div class="p-4 flex justify-between items-center">
+                <h2 class="text-lg font-black text-[#D71921]">품질 보증 상세 내용</h2>
+                <button onclick="document.getElementById('warrantyModal').classList.add('hidden')" class="bg-slate-200 text-slate-700 px-4 py-2 rounded-xl font-bold">닫기</button>
             </div>
-            <button onclick="document.getElementById('warrantyModal').classList.add('hidden')" class="mt-6 w-full bg-slate-900 text-white py-4 rounded-2xl font-black active:scale-95 transition-all">닫기</button>
+            
+            <!-- PDF 파일 표시 영역: 깃허브에 업로드한 파일명과 일치시켜야 합니다 -->
+            <div class="flex-grow overflow-auto p-2">
+                <embed src="260409_RS002&RD002포스터- 업로드할것 FINAL.pdf" type="application/pdf" width="100%" height="500px" />
+                <p class="text-[11px] text-slate-400 mt-2 text-center">※ 파일이 보이지 않으면 깃허브 업로드 파일명을 확인해주세요.</p>
+            </div>
         </div>
-    </div>    
+    </div>
 </body>
 </html>
