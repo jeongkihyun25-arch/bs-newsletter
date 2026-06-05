@@ -69,6 +69,7 @@
 
         <section>
             <div id="newsletter-list" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- 로딩 중일 때 보여줄 스켈레톤 UI -->
                 <div class="flex flex-col sm:flex-row bg-white border border-slate-100 rounded-[2rem] h-64 animate-pulse shadow-sm">
                     <div class="sm:w-2/5 h-48 sm:h-full bg-slate-200"></div>
                     <div class="sm:w-3/5 p-8 flex flex-col justify-center">
@@ -96,11 +97,12 @@
         async function loadNewsletters() {
             const listElement = document.getElementById('newsletter-list');
             try {
+                // 1. 파일 목록 가져오기
                 const response = await fetch(`https://api.github.com/repos/${USERNAME}/${REPO}/contents/`);
                 if (!response.ok) throw new Error('Network response was not ok');
                 const files = await response.json();
 
-                // 2026-06-01.html을 1호로, 나머지는 02.html, 03.html 등 숫자 형태 파일로 필터링 후 내림차순 정렬
+                // 2. 2026-06-01.html(1호) 및 02.html 형태의 파일 필터링 및 내림차순 정렬
                 const newsletters = files
                     .filter(file => file.name === '2026-06-01.html' || /^\d{2}\.html$/.test(file.name))
                     .sort((a, b) => {
@@ -108,22 +110,42 @@
                         return getIssueNumber(b) - getIssueNumber(a);
                     });
 
-                listElement.innerHTML = '';
-
                 if (newsletters.length === 0) {
                     listElement.innerHTML = '<div class="col-span-full py-20 text-center text-slate-400 font-bold">발행된 뉴스레터가 없습니다.</div>';
                     return;
                 }
 
-                newsletters.forEach((file, index) => {
+                // 3. 각 HTML 파일의 내용을 스캔해서 <meta name="description"> 요약본 가져오기
+                const newsletterDataList = await Promise.all(newsletters.map(async (file) => {
+                    let summary = "브리지스톤 LT 엠베서더를 위한 유용한 정보들 및 세일즈 인사이트를 확인하세요."; // 기본 요약 내용
+                    try {
+                        const htmlRes = await fetch(file.download_url);
+                        if (htmlRes.ok) {
+                            const htmlText = await htmlRes.text();
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(htmlText, 'text/html');
+                            const metaDesc = doc.querySelector('meta[name="description"]');
+                            // meta 설명이 존재하면 해당 내용으로 교체
+                            if (metaDesc && metaDesc.getAttribute('content') && metaDesc.getAttribute('content').trim() !== "") {
+                                summary = metaDesc.getAttribute('content');
+                            }
+                        }
+                    } catch (e) {
+                        console.error('요약 가져오기 오류:', e);
+                    }
+                    return { file, summary };
+                }));
+
+                // 4. 화면에 렌더링
+                listElement.innerHTML = '';
+                
+                newsletterDataList.forEach((data, index) => {
                     const isNew = index === 0;
-                    
-                    // 2026-06-01.html은 1호, 그 외는 파일명에서 숫자 추출
-                    const issueNumber = file.name === '2026-06-01.html' ? 1 : parseInt(file.name, 10);
+                    const issueNumber = data.file.name === '2026-06-01.html' ? 1 : parseInt(data.file.name, 10);
                     const displayName = `제 ${issueNumber}호`;
                     
                     const cardHtml = `
-                        <a href="${file.name}" class="magazine-card group flex flex-col sm:flex-row bg-white border border-slate-200 rounded-[2rem] overflow-hidden shadow-sm relative" data-aos="fade-up" data-aos-delay="${index * 50}">
+                        <a href="${data.file.name}" class="magazine-card group flex flex-col sm:flex-row bg-white border border-slate-200 rounded-[2rem] overflow-hidden shadow-sm relative" data-aos="fade-up" data-aos-delay="${index * 50}">
                             
                             <div class="sm:w-2/5 relative h-56 sm:h-auto overflow-hidden bg-slate-900 shrink-0">
                                 <img src="${DEFAULT_IMAGE}" alt="Cover" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700">
@@ -144,8 +166,10 @@
                                     <span class="text-[10px] font-black text-red-500 bg-red-50 px-2.5 py-1 rounded tracking-widest mb-3 inline-block">뉴스레터 리포트</span>
                                     <h4 class="text-2xl font-black text-slate-800 tracking-tighter group-hover:text-bs-red transition-colors">${displayName}</h4>
                                 </div>
+                                
+                                <!-- 이 부분이 동적으로 추출된 요약본을 보여줍니다 -->
                                 <p class="text-[13px] text-slate-500 font-medium leading-relaxed line-clamp-2 mb-6">
-                                    브리지스톤 LT 엠베서더를 위한 유용한 정보들 및 세일즈 인사이트를 확인하세요.
+                                    ${data.summary}
                                 </p>
                                 
                                 <div class="mt-auto flex items-center justify-between border-t border-slate-100 pt-4">
