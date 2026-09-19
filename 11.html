@@ -256,5 +256,15 @@
     fetch(API_URL + "?action=log&issue=" + encodeURIComponent(issue) + "&device=" + device, { mode: 'no-cors' }).catch(function(){});
   })();
 </script>
+
+<script>
+    // 누락되었던 스크립트 복원 부분
+    AOS.init({ duration: 800, once: true }); 
+    lucide.createIcons();
+</script>
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script src="/_vercel/insights/script.js"></script>
 </body>
 </html>
