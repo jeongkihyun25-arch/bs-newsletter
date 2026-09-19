@@ -236,19 +236,16 @@
 
 </div>
 
-<!-- 통계 스크립트 강제 삽입 규격 (관리자 제외 기능 포함) -->
+<!-- 통계 스크립트 강제 삽입 규격 (테스트 접속 완벽 차단) -->
 <script>
   (function() {
-    // 1. 관리자 모드 설정 (주소창에 ?admin=1 입력 시 영구 저장)
-    if (window.location.search.indexOf('admin=1') !== -1) {
-      localStorage.setItem('bstk_admin', 'true');
-      alert('관리자 모드가 활성화되었습니다. 앞으로 이 기기의 접속은 통계에 집계되지 않습니다.');
+    // 1. 주소창에 'test'가 포함되어 있으면 데이터 전송 즉시 중단 (카운팅 X)
+    if (window.location.search.indexOf('test') !== -1) {
+      console.log("테스트 접속: 통계에 집계되지 않습니다.");
+      return; 
     }
-    
-    // 2. 관리자 기기인 경우 여기서 실행 중단 (카운팅 X)
-    if (localStorage.getItem('bstk_admin') === 'true') return;
 
-    // 3. 일반 사용자 카운팅 실행
+    // 2. 일반 접속 시에만 정상 카운팅 실행
     var API_URL = "https://script.google.com/macros/s/AKfycbwA-GHQNdj_WmRliQECvSUaFU_iP5khpERtjtuajIGqaVFRy6A_embtUMMMnEfuHNTaNQ/exec";
     var titleMatch = document.title.match(/\d+호/);
     var issue = titleMatch ? titleMatch[0] : "알수없음";
